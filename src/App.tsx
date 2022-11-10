@@ -87,7 +87,7 @@ function App() {
         />
       </Routes>
 
-      {/*<div className="buttons-container">*/}
+      <div className="buttons-container">
       {/*  <InfoOutlined className="pointer" style={{ color: "white", margin: "0 4px" }} onClick={() => {setShowInfoModal(!showInfoModal)}}/>*/}
 
       {/*  <div className="pointer" onClick={() => {setShowImages(!showImages)}}>*/}
@@ -99,7 +99,8 @@ function App() {
       {/*      <ChevronLeft style={{ color: "white", margin: "0 4px" }} />*/}
       {/*    )}*/}
       {/*    </div>*/}
-      {/*</div>*/}
+        <a target="_blank" style={{color: 'white', textDecoration:'none'}} href="https://unegma.com">unegma<span style={{color:'cyan'}}>.</span>com</a>
+      </div>
     </div>
   );
 }
