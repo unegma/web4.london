@@ -50,20 +50,20 @@ export default function SpaceOne({space, cameraPosition}: any) {
 
   return (
     <>
-      <div className={`buttons-container buttons-container--left-helper`}>
-        <p className='helperText' onClick={() => {showHelperTextMessage()}}>{helperText}</p>
-      </div>
+      {/*<div className={`buttons-container buttons-container--left-helper`}>*/}
+      {/*  <p className='helperText' onClick={() => {showHelperTextMessage()}}>{helperText}</p>*/}
+      {/*</div>*/}
 
-      <div className={`buttons-container buttons-container--mid-right`}>
-        <GridOnIcon className="pointer" style={{ color: "white", margin: "4px 4px" }} onClick={() => {toggleGridOn()}}/>
+      {/*<div className={`buttons-container buttons-container--mid-right`}>*/}
+      {/*  <GridOnIcon className="pointer" style={{ color: "white", margin: "4px 4px" }} onClick={() => {toggleGridOn()}}/>*/}
 
-        { zoomOn && (
-          <ZoomIn className="pointer" style={{ color: "white", margin: "4px 4px" }} onClick={() => {toggleZoomOn()}}/>
-        )}
-        { !zoomOn && (
-          <ZoomOut className="pointer" style={{ color: "white", margin: "4px 4px" }} onClick={() => {toggleZoomOn()}}/>
-        )}
-      </div>
+      {/*  { zoomOn && (*/}
+      {/*    <ZoomIn className="pointer" style={{ color: "white", margin: "4px 4px" }} onClick={() => {toggleZoomOn()}}/>*/}
+      {/*  )}*/}
+      {/*  { !zoomOn && (*/}
+      {/*    <ZoomOut className="pointer" style={{ color: "white", margin: "4px 4px" }} onClick={() => {toggleZoomOn()}}/>*/}
+      {/*  )}*/}
+      {/*</div>*/}
 
       <Loader/>
 
@@ -74,28 +74,15 @@ export default function SpaceOne({space, cameraPosition}: any) {
         {/*<OrbitControls enableZoom={zoomOn} enablePan={true} />*/}
         {/*todo add zoom controls*/}
         <OrbitControls
-          enableZoom={zoomOn} enablePan={true} minDistance={4} maxDistance={10}
+          enableZoom={false} enablePan={false} minDistance={4} maxDistance={10}
           minPolarAngle={1} maxPolarAngle={1.75}
           minAzimuthAngle={0.8} maxAzimuthAngle={1.4}
         />
 
         <ambientLight/>
         <pointLight intensity={2} position={[0, 0, 0]}/>
-        <PerspectiveCamera position={cameraPosition} makeDefault/>
+        <PerspectiveCamera position={cameraPosition} makeDefault rotation={[0,-1,0]}/>
         {/*<PerspectiveCamera position={cameraPosition} fov={12} makeDefault/>*/}
-
-        <group visible={gridOn}>
-          <gridHelper position={[0,-1.4,-3.81]}/>
-
-          <gridHelper position={[0,-1.4,6.19]}/>
-          <gridHelper position={[-10,-1.4,6.19]}/>
-          <gridHelper position={[-10,-1.4,-3.81]}/>
-          <gridHelper position={[-10,-1.4,-13.81]}/>
-          <gridHelper position={[0,-1.4,-13.81]}/>
-          <gridHelper position={[10,-1.4,-13.81]}/>
-          <gridHelper position={[10,-1.4,-3.81]}/>
-          <gridHelper position={[10,-1.4,6.19]}/>
-        </group>
 
         <Suspense>
           {space}

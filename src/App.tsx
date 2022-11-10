@@ -36,31 +36,30 @@ function App() {
 
       <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} />
       {/*<BookingModal showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />*/}
-      <PhotoViewer showImages={showImages} />
+      {/*<PhotoViewer showImages={showImages} />*/}
 
-      <LeftSideDrawer
-        drawerOpen={drawerOpen}
-        toggleLeftSideDrawer={toggleLeftSideDrawer}
-        setShowImages={setShowImages}
-        setShowInfoModal={setShowInfoModal}
-      />
+      {/*<LeftSideDrawer*/}
+      {/*  drawerOpen={drawerOpen}*/}
+      {/*  toggleLeftSideDrawer={toggleLeftSideDrawer}*/}
+      {/*  setShowImages={setShowImages}*/}
+      {/*  setShowInfoModal={setShowInfoModal}*/}
+      {/*/>*/}
 
       <Routes>
         <Route
           key={'home'}
           path="/"
           element={
-            <HomeScreen toggleLeftSideDrawer={toggleLeftSideDrawer} />
-          }
-        />
-
-        <Route
-          key={'gallery'}
-          path="/gallery"
-          element={
             <SpaceOne cameraPosition={[0.1,0.8,0.1]} space={<BlacksGallery />}/>
           }
         />
+
+        {/*<Route*/}
+        {/*  key={'gallery'}*/}
+        {/*  path="/gallery"*/}
+        {/*  element={*/}
+        {/*  }*/}
+        {/*/>*/}
 
         <Route
           path="*"
@@ -72,19 +71,19 @@ function App() {
         />
       </Routes>
 
-      <div className="buttons-container">
-        <InfoOutlined className="pointer" style={{ color: "white", margin: "0 4px" }} onClick={() => {setShowInfoModal(!showInfoModal)}}/>
+      {/*<div className="buttons-container">*/}
+      {/*  <InfoOutlined className="pointer" style={{ color: "white", margin: "0 4px" }} onClick={() => {setShowInfoModal(!showInfoModal)}}/>*/}
 
-        <div className="pointer" onClick={() => {setShowImages(!showImages)}}>
-          <CameraAltOutlined  style={{ color: "white", margin: "0 4px" }} />
-          { showImages && (
-            <ChevronRight style={{ color: "white", margin: "0 4px" }} />
-          )}
-          { !showImages && (
-            <ChevronLeft style={{ color: "white", margin: "0 4px" }} />
-          )}
-          </div>
-      </div>
+      {/*  <div className="pointer" onClick={() => {setShowImages(!showImages)}}>*/}
+      {/*    <CameraAltOutlined  style={{ color: "white", margin: "0 4px" }} />*/}
+      {/*    { showImages && (*/}
+      {/*      <ChevronRight style={{ color: "white", margin: "0 4px" }} />*/}
+      {/*    )}*/}
+      {/*    { !showImages && (*/}
+      {/*      <ChevronLeft style={{ color: "white", margin: "0 4px" }} />*/}
+      {/*    )}*/}
+      {/*    </div>*/}
+      {/*</div>*/}
     </div>
   );
 }
