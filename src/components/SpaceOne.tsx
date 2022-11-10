@@ -1,5 +1,5 @@
 import {DefaultXRControllers, VRCanvas, useXR} from "@react-three/xr";
-import {Html, OrbitControls, PerspectiveCamera} from "@react-three/drei";
+import {Html, Loader, OrbitControls, PerspectiveCamera} from "@react-three/drei";
 import React, {Suspense, useState} from "react";
 import {Menu, ZoomIn, ZoomOut} from "@mui/icons-material";
 import GridOnIcon from "@mui/icons-material/GridOn";
@@ -62,6 +62,8 @@ export default function SpaceOne({space, cameraPosition}: any) {
         )}
       </div>
 
+      <Loader/>
+
       <VRCanvas>
         <DefaultXRControllers />
 
@@ -70,7 +72,7 @@ export default function SpaceOne({space, cameraPosition}: any) {
         {/*todo add zoom controls*/}
         <OrbitControls
           enableZoom={zoomOn} enablePan={true} minDistance={4} maxDistance={10}
-          minPolarAngle={1} maxPolarAngle={1.8}
+          minPolarAngle={1} maxPolarAngle={1.75}
           minAzimuthAngle={0.8} maxAzimuthAngle={1.4}
         />
 
@@ -92,7 +94,7 @@ export default function SpaceOne({space, cameraPosition}: any) {
           <gridHelper position={[10,-1.4,6.19]}/>
         </group>
 
-        <Suspense fallback={<Html className="white">loading 3d view..</Html>}>
+        <Suspense>
           {space}
         </Suspense>
       </VRCanvas>

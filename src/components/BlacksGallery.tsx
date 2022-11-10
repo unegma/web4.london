@@ -2,7 +2,8 @@ import * as THREE from 'three'
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-const SPACE_URI = `${process.env.REACT_APP_ASSETS_URL}/blacks-gallery-transformed.glb`;
+const SPACE_URI = `${process.env.REACT_APP_ASSETS_URL}/blacks-gallery.gltf`;
+// const SPACE_URI = `${process.env.REACT_APP_ASSETS_URL}/blacks-gallery-transformed.glb`;
 
 type GLTFResult = GLTF & {
   nodes: {
