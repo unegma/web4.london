@@ -6,7 +6,7 @@
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::spaces.unegma.place/*",
+      "Resource": "arn:aws:s3:::blacks.unegma.digital/*",
       "Condition": {
         "IpAddress": {
           "aws:SourceIp": [
