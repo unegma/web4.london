@@ -10,7 +10,7 @@ import InfoModal from "./components/InfoModal";
 import LeftSideDrawer from "./components/LeftSideDrawer";
 import HomeScreen from "./components/HomeScreen";
 import SpaceOne from "./components/SpaceOne";
-import Space from "./components/Space";
+import BlacksGallery from "./components/BlacksGallery";
 // import BookingModal from "./components/BookingModal";
 
 function App() {
@@ -56,9 +56,9 @@ function App() {
 
         <Route
           key={'space'}
-          path="/space"
+          path="/gallery"
           element={
-            <SpaceOne cameraPosition={[5,5,5]} space={<Space />}/>
+            <SpaceOne cameraPosition={[5,5,5]} space={<BlacksGallery />}/>
           }
         />
 
