@@ -37,7 +37,7 @@ export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalT
         <HighlightOffIcon className="closeModalButton" onClick={() => { setShowInfoModal(false)}}/>
         <Typography variant="h3" className="secondaryColor">Info</Typography>
 
-        <p>Info about: {infoModalText}</p>
+        <p>{infoModalText}</p>
         <p style={{color: 'red'}}>PLEASE NOTE: THESE ARE NOT ACTUAL NFTS.</p>
 
         <hr/>
@@ -47,9 +47,9 @@ export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalT
         {/*  <span>Made by <a target="_blank" href="https://unegma.com">unegma</a>.</span>*/}
         {/*</Typography>*/}
 
-        {/*<Button className="closeModalButton--large" variant="contained" color="primary" onClick={handleClose}>*/}
-        {/*  Close*/}
-        {/*</Button>*/}
+        <Button className="closeModalButton--large" variant="contained" color="primary" onClick={handleClose}>
+          Close
+        </Button>
       </Box>
     </Modal>
   )
