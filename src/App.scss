@@ -1,0 +1,195 @@
+html, body {
+  background: black;
+  width: 100vw;
+  height: 100%; /* Using 100% because 100vh on mobiles will not include the navbar*/
+}
+
+#root {
+  height:100%;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.navBar {
+  text-align: left;
+  color: white;
+}
+
+.MuiPaper-root {
+  border-bottom: 1px #4d4d4d solid;
+}
+
+.white {
+  color: white;
+}
+
+.buttons-container {
+  position: absolute;
+  z-index: 999;
+  bottom: 0px;
+  right: 0;
+  padding: 5px;
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+/*ipad mini*/
+@media screen and (min-width: 768px) {
+  .buttons-container {
+    bottom: 0;
+  }
+}
+
+.buttons-container--left {
+  left:0;
+  right: inherit;
+}
+
+.buttons-container--left-helper {
+  //left:5vw;
+  right: inherit;
+}
+
+.buttons-container--mid-right {
+  display: flex;
+  flex-direction: column;
+  right:0;
+  bottom: 45%;
+  /*right: inherit;*/
+}
+
+.helperText {
+  color: white;
+  display: block;
+  margin: 5px 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.slide-out-gallery {
+  position:absolute;
+  right: 0;
+  /*width: 100px;*/
+  height: 100vh;
+  z-index:10;
+  overflow:scroll;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+}
+
+.slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+  100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+  100% { -webkit-transform: translateX(0%); }
+}
+
+@keyframes slide-out {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+@-webkit-keyframes slide-out {
+  0% { -webkit-transform: translateX(0%); }
+  100% { -webkit-transform: translateX(100%); }
+}
+
+.slide-out-gallery-container {
+  margin-top: 65px; /* height of nav bar */
+  flex-direction: column;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.slide-out-gallery-image {
+  width: 300px;
+  height: auto;
+}
+
+.closeModalButton {
+  cursor: pointer;
+  position: absolute !important;
+  right: 5px !important;
+  top:5px !important;
+}
+
+.home-screen-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.home-screen-cover {
+  display: flex;
+  position: absolute;
+  width:100%;
+  height:100%;
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
+  opacity: 0.9;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-screen-button {
+  color: black !important;
+  border-color: white !important;
+  background-color: white !important;
+  font-weight: bold !important;
+}
+
+.drawer-link {
+  color: black;
+  text-decoration: none !important;
+}
+
+.main-title {
+  cursor: pointer;
+}
+
+.main-title-navbar {
+  padding: 8px;
+  padding-left: 14px;
+}
+
+.info-map {
+  min-height: 40vh;
+}
+
+.closeModalButton--large {
+  cursor: pointer;
+  position: absolute !important;
+  right: 15px !important;
+  bottom:15px !important;
+}
