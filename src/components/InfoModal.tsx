@@ -38,8 +38,8 @@ export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalT
         <Typography variant="h3" className="secondaryColor">Info</Typography>
 
         <p>{infoModalText}</p>
-        <p style={{color: 'red'}}>PLEASE NOTE: THESE ARE NOT ACTUAL NFTS.</p>
-
+        <p style={{color: 'red'}}>PLEASE NOTE: THIS IS A DEMO, THESE ARE NOT ACTUAL NFTS AND NO PAINTINGS ARE FOR SALE.</p>
+        <p>Pan around to see the space.</p>
         <hr/>
 
         {/*<Typography className="secondaryColor">*/}

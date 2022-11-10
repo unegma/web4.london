@@ -28,7 +28,7 @@ export default function BlacksPicture3({ setShowInfoModal, setInfoModalText, ...
     <group ref={group} {...props} dispose={null} rotation={[0,1,-0.1]} scale={1.3} position={[0.9,0.7,-3.2]}
            onPointerOver={() => setHovered(true)}
            onPointerOut={() => setHovered(false)}
-           onClick={() => {setShowInfoModal(true); setInfoModalText('Info about Picture3 and Buy info (this actual painting is not for sale)')}}
+           onClick={() => {setShowInfoModal(true); setInfoModalText('Info about Picture3 and Buy info (this actual painting is not for sale and will not be!)')}}
     >
       <mesh castShadow receiveShadow geometry={nodes.Frame3.geometry} material={materials.Frames} rotation={[-0.02, 0, 0]}>
         {hovered && (

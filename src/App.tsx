@@ -16,7 +16,7 @@ import BlacksGallery from "./components/BlacksGallery";
 function App() {
   const [showImages, setShowImages] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(true);
-  const [infoModalText, setShowInfoModalText] = useState('Click a Picture to view info and buy');
+  const [infoModalText, setShowInfoModalText] = useState("Click a Picture to view info and buy.");
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
