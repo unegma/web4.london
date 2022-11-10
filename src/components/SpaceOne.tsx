@@ -3,6 +3,9 @@ import {Html, Loader, OrbitControls, PerspectiveCamera} from "@react-three/drei"
 import React, {Suspense, useState} from "react";
 import {Menu, ZoomIn, ZoomOut} from "@mui/icons-material";
 import GridOnIcon from "@mui/icons-material/GridOn";
+import BlacksPicture1 from "./BlacksPicture1";
+import BlacksPicture2 from "./BlacksPicture2";
+import BlacksPicture3 from "./BlacksPicture3";
 const initialHelperText = '↺ or ⇉ Model';
 
 export default function SpaceOne({space, cameraPosition}: any) {
@@ -96,6 +99,10 @@ export default function SpaceOne({space, cameraPosition}: any) {
 
         <Suspense>
           {space}
+
+          <BlacksPicture1/>
+          <BlacksPicture2/>
+          <BlacksPicture3/>
         </Suspense>
       </VRCanvas>
     </>
