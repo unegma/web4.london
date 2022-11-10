@@ -20,8 +20,8 @@ export default function LeftSideDrawer(
     title: SUBMENU_TITLE,
     items: [
       {
-        key: 'space',
-        name: "Space One",
+        key: 'gallery',
+        name: "Gallery",
       },
     ]
   };

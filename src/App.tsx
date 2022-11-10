@@ -55,7 +55,7 @@ function App() {
         />
 
         <Route
-          key={'space'}
+          key={'gallery'}
           path="/gallery"
           element={
             <SpaceOne cameraPosition={[5,5,5]} space={<BlacksGallery />}/>
