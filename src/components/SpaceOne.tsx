@@ -99,9 +99,9 @@ export default function SpaceOne({isMobile, space, cameraPosition, setShowInfoMo
         <Suspense>
           {space}
 
-          <BlacksPicture1 onClick={() => {setShowInfoModal(true); setInfoModalText('Picture1')}} />
-          <BlacksPicture2 onClick={() => {setShowInfoModal(true); setInfoModalText('Picture1')}} />
-          <BlacksPicture3 onClick={() => {setShowInfoModal(true); setInfoModalText('Picture1')}} />
+          <BlacksPicture1 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
+          <BlacksPicture2 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
+          <BlacksPicture3 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
         </Suspense>
       </VRCanvas>
     </>

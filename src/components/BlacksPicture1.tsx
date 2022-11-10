@@ -13,7 +13,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export default function BlacksPicture1({ ...props }: JSX.IntrinsicElements['group']) {
+export default function BlacksPicture1({ setShowInfoModal, setInfoModalText, ...props }: any) {
   const group = useRef<THREE.Group>(null)
   const { nodes, materials } = useGLTF(SPACE_URI, 'https://www.gstatic.com/draco/versioned/decoders/1.4.1/') as GLTFResult
 
@@ -28,6 +28,7 @@ export default function BlacksPicture1({ ...props }: JSX.IntrinsicElements['grou
     <group ref={group} {...props} dispose={null} rotation={[0,2.75,0]} scale={1.3} position={[-2.75,0.7,0.65]}
            onPointerOver={() => setHovered(true)}
            onPointerOut={() => setHovered(false)}
+           onClick={() => {setShowInfoModal(true); setInfoModalText('Info about Picture1 and Buy info (this actual painting is not for sale)')}}
     >
       <mesh castShadow receiveShadow geometry={nodes.Frame1.geometry} material={materials.Frames} rotation={[-0.03, 0, 0]}>
         {hovered && (
