@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Route, Routes
 } from "react-router-dom";
@@ -19,6 +19,21 @@ function App() {
   const [infoModalText, setShowInfoModalText] = useState('Click a Picture to view info and buy');
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+  const [width, setWidth] = useState<number>(window.innerWidth);
+  const isMobile = width <= 768;
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+      console.log(isMobile)
+    }
+  }, []);
+
 
   const toggleLeftSideDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
       if (event.type === 'keydown' && (
@@ -51,7 +66,7 @@ function App() {
           key={'home'}
           path="/"
           element={
-            <SpaceOne cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText} space={<BlacksGallery />}/>
+            <SpaceOne isMobile={isMobile} cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText} space={<BlacksGallery />}/>
           }
         />
 

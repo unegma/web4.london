@@ -8,7 +8,7 @@ import BlacksPicture2 from "./BlacksPicture2";
 import BlacksPicture3 from "./BlacksPicture3";
 const initialHelperText = '↺ or ⇉ Model';
 
-export default function SpaceOne({space, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText}: any) {
+export default function SpaceOne({isMobile, space, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText}: any) {
   const { player } = useXR();
 
   const [gridOn, setGridOn] = useState(false);
@@ -73,11 +73,23 @@ export default function SpaceOne({space, cameraPosition, setShowInfoModal, infoM
         {/*lock zoom to keep dolls house view. Can use minPolarAngle={Math.PI/2.1} maxPolarAngle={Math.PI/2.1} to lock rotation */}
         {/*<OrbitControls enableZoom={zoomOn} enablePan={true} />*/}
         {/*todo add zoom controls*/}
-        <OrbitControls
-          enableZoom={false} enablePan={false} minDistance={4} maxDistance={10}
-          minPolarAngle={1} maxPolarAngle={1.75}
-          minAzimuthAngle={0.8} maxAzimuthAngle={1.4}
-        />
+
+        { isMobile === false && (
+          <OrbitControls
+            enableZoom={false} enablePan={false} minDistance={4} maxDistance={10}
+            minPolarAngle={1} maxPolarAngle={1.75}
+            minAzimuthAngle={0.8} maxAzimuthAngle={1.4}
+          />
+        )}
+
+
+        { isMobile === true && (
+          <OrbitControls
+            enableZoom={false} enablePan={false} minDistance={4} maxDistance={10}
+            minPolarAngle={1} maxPolarAngle={1.75}
+            minAzimuthAngle={0.8} maxAzimuthAngle={3}
+          />
+        )}
 
         <ambientLight/>
         <pointLight intensity={2} position={[0, 0, 0]}/>
