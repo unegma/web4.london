@@ -58,7 +58,7 @@ function App() {
           key={'gallery'}
           path="/gallery"
           element={
-            <SpaceOne cameraPosition={[5,5,5]} space={<BlacksGallery />}/>
+            <SpaceOne cameraPosition={[0.1,0.8,0.1]} space={<BlacksGallery />}/>
           }
         />
 

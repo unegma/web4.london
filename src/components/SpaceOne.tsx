@@ -66,13 +66,18 @@ export default function SpaceOne({space, cameraPosition}: any) {
         <DefaultXRControllers />
 
         {/*lock zoom to keep dolls house view. Can use minPolarAngle={Math.PI/2.1} maxPolarAngle={Math.PI/2.1} to lock rotation */}
-        <OrbitControls enableZoom={zoomOn} enablePan={true} />
+        {/*<OrbitControls enableZoom={zoomOn} enablePan={true} />*/}
         {/*todo add zoom controls*/}
-        {/*<OrbitControls enableZoom={zoomOn} enablePan={true} minDistance={4} maxDistance={10} />*/}
+        <OrbitControls
+          enableZoom={zoomOn} enablePan={true} minDistance={4} maxDistance={10}
+          minPolarAngle={1} maxPolarAngle={1.8}
+          minAzimuthAngle={0.8} maxAzimuthAngle={1.4}
+        />
 
         <ambientLight/>
-        <pointLight intensity={3} position={[0, 0, 0]}/>
+        <pointLight intensity={2} position={[0, 0, 0]}/>
         <PerspectiveCamera position={cameraPosition} makeDefault/>
+        {/*<PerspectiveCamera position={cameraPosition} fov={12} makeDefault/>*/}
 
         <group visible={gridOn}>
           <gridHelper position={[0,-1.4,-3.81]}/>
