@@ -2,7 +2,7 @@ import {Button, createStyles, makeStyles, Modal, Theme, Typography, Box} from "@
 import React from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
-export default function InfoModal ({ showInfoModal, setShowInfoModal }: any) {
+export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalText }: any) {
 
   const handleClose = () => {
     setShowInfoModal(false);
@@ -37,24 +37,19 @@ export default function InfoModal ({ showInfoModal, setShowInfoModal }: any) {
         <HighlightOffIcon className="closeModalButton" onClick={() => { setShowInfoModal(false)}}/>
         <Typography variant="h3" className="secondaryColor">Info</Typography>
 
-        <Typography className="secondaryColor">Address and Contact Details:</Typography>
-        <Typography className="secondaryColor">{process.env.REACT_APP_CONTACT}</Typography>
-        <Typography className="secondaryColor">{process.env.REACT_APP_ADDRESS}</Typography>
-        <iframe
-          src={process.env.REACT_APP_GOOGLE_MAP_URL}
-          width="100%" height="auto" className="info-map" loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade">
-        </iframe>
+        <p>Info about: {infoModalText}</p>
+        <p style={{color: 'red'}}>PLEASE NOTE: THESE ARE NOT ACTUAL NFTS.</p>
 
         <hr/>
-        <Typography className="secondaryColor">
-          Contribute here: <a target="_blank" href={process.env.REACT_APP_GITHUB_LINK}>Github</a>.<br/>
-          <span>Made by <a target="_blank" href="https://unegma.com">unegma</a>.</span>
-        </Typography>
 
-        <Button className="closeModalButton--large" variant="contained" color="primary" onClick={handleClose}>
-          Close
-        </Button>
+        {/*<Typography className="secondaryColor">*/}
+        {/*  Contribute here: <a target="_blank" href={process.env.REACT_APP_GITHUB_LINK}>Github</a>.<br/>*/}
+        {/*  <span>Made by <a target="_blank" href="https://unegma.com">unegma</a>.</span>*/}
+        {/*</Typography>*/}
+
+        {/*<Button className="closeModalButton--large" variant="contained" color="primary" onClick={handleClose}>*/}
+        {/*  Close*/}
+        {/*</Button>*/}
       </Box>
     </Modal>
   )

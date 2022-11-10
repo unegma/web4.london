@@ -16,6 +16,7 @@ import BlacksGallery from "./components/BlacksGallery";
 function App() {
   const [showImages, setShowImages] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(false);
+  const [infoModalText, setShowInfoModalText] = useState('');
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
@@ -34,7 +35,7 @@ function App() {
 
       <NavBar toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
 
-      <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} />
+      <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} />
       {/*<BookingModal showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />*/}
       {/*<PhotoViewer showImages={showImages} />*/}
 
@@ -50,7 +51,7 @@ function App() {
           key={'home'}
           path="/"
           element={
-            <SpaceOne cameraPosition={[0.1,0.8,0.1]} space={<BlacksGallery />}/>
+            <SpaceOne cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText} space={<BlacksGallery />}/>
           }
         />
 

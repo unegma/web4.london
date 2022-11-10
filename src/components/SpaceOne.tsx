@@ -8,7 +8,7 @@ import BlacksPicture2 from "./BlacksPicture2";
 import BlacksPicture3 from "./BlacksPicture3";
 const initialHelperText = '↺ or ⇉ Model';
 
-export default function SpaceOne({space, cameraPosition}: any) {
+export default function SpaceOne({space, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText}: any) {
   const { player } = useXR();
 
   const [gridOn, setGridOn] = useState(false);
@@ -87,9 +87,9 @@ export default function SpaceOne({space, cameraPosition}: any) {
         <Suspense>
           {space}
 
-          <BlacksPicture1/>
-          <BlacksPicture2/>
-          <BlacksPicture3/>
+          <BlacksPicture1 onClick={() => {setShowInfoModal(true); setInfoModalText('Picture1')}} />
+          <BlacksPicture2 onClick={() => {setShowInfoModal(true); setInfoModalText('Picture1')}} />
+          <BlacksPicture3 onClick={() => {setShowInfoModal(true); setInfoModalText('Picture1')}} />
         </Suspense>
       </VRCanvas>
     </>
