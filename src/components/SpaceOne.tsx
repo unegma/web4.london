@@ -87,7 +87,7 @@ export default function SpaceOne({isMobile, space, cameraPosition, setShowInfoMo
           <OrbitControls
             enableZoom={false} enablePan={false} minDistance={4} maxDistance={10}
             minPolarAngle={1} maxPolarAngle={1.75}
-            maxAzimuthAngle={2} minAzimuthAngle={0.1}
+            maxAzimuthAngle={2} minAzimuthAngle={-0.1}
           />
         )}
 
