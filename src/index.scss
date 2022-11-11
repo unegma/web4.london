@@ -1,10 +1,29 @@
+//https://stackoverflow.com/questions/61617011/how-can-i-use-environment-variables-in-node-sass-scss-files
+$cdn: 'https://assets.unegma.net/shared/fonts/';
+
+@font-face {
+  font-family: 'Heldane';
+  //src: local('Heldane'), url($cdn + 'heldane.woff2') format('woff2');
+  src: local('Heldane'), url(./fonts/heldane.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Termina';
+  //src: local('Termina'), url($cdn + 'termina.woff2') format('woff2');
+  src: local('Termina'), url(./fonts/termina.woff2) format('woff2');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Heldane, serif !important;
+  //font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: Heldane, serif !important;
 }
 
 code {
