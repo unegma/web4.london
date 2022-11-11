@@ -19,7 +19,7 @@ export default function NavBar(
           <Typography className="main-title" variant="h6" component="div" sx={{ flexGrow: 1 }} onClick={(event:any) => {toggleLeftSideDrawer(event)}}>
             {process.env.REACT_APP_NAV_TITLE}
           </Typography>
-          <Button color="inherit" variant="outlined" href="https://blacksclub.com" target="_blank">Membership</Button>
+          <Button color="inherit" variant="outlined" href={`${process.env.REACT_APP_HOME_URL}`} target="_blank">Membership</Button>
         </Toolbar>
       </AppBar>
     </Box>
