@@ -19,7 +19,7 @@ export default function NavBar(
           <Typography className="main-title" variant="h6" component="div" sx={{ flexGrow: 1 }} onClick={(event:any) => {toggleLeftSideDrawer(event)}}>
             {process.env.REACT_APP_NAV_TITLE}
           </Typography>
-          {/*<Button color="error" variant="contained" onClick={() => {setShowBookingModal(!showBookingModal)}}>Book</Button>*/}
+          <Button color="inherit" variant="outlined" href="https://blacksclub.com" target="_blank">Membership</Button>
         </Toolbar>
       </AppBar>
     </Box>
