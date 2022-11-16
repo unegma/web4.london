@@ -26,7 +26,7 @@ export default function JoePicture1({ setShowInfoModal, setInfoModalText, ...pro
   }, [hovered])
 
   return (
-    <group ref={group} {...props} dispose={null} rotation={[0,2.75,0]} scale={1.3} position={[-2.75,0.7,0.65]}
+    <group ref={group} {...props} dispose={null} rotation={[0,2.75,0]} scale={1} position={[-2.75,0.7,0.65]}
            onPointerOver={() => setHovered(true)}
            onPointerOut={() => setHovered(false)}
            onClick={() => {setShowInfoModal(true); setInfoModalText('Info about Picture1 and Buy info (this actual painting is not for sale and will not be!)')}}

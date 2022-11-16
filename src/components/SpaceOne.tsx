@@ -3,12 +3,15 @@ import {Html, Loader, OrbitControls, PerspectiveCamera} from "@react-three/drei"
 import React, {Suspense, useState} from "react";
 import {Menu, ZoomIn, ZoomOut} from "@mui/icons-material";
 import GridOnIcon from "@mui/icons-material/GridOn";
-import BlacksPicture1 from "./BlacksPicture1";
-import BlacksPicture2 from "./BlacksPicture2";
-import BlacksPicture3 from "./BlacksPicture3";
+import BlacksPicture1 from "./3d/BlacksPicture1";
+import BlacksPicture2 from "./3d/BlacksPicture2";
+import BlacksPicture3 from "./3d/BlacksPicture3";
+import JoePicture1 from "./3d/JoePicture1";
+import JoePicture2 from "./3d/JoePicture2";
+import JoePicture3 from "./3d/JoePicture3";
 const initialHelperText = '↺ or ⇉ Model';
 
-export default function SpaceOne({isMobile, space, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText}: any) {
+export default function SpaceOne({isMobile, space, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, picSet}: any) {
   const { player } = useXR();
 
   const [gridOn, setGridOn] = useState(false);
@@ -99,9 +102,21 @@ export default function SpaceOne({isMobile, space, cameraPosition, setShowInfoMo
         <Suspense>
           {space}
 
-          <BlacksPicture1 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
-          <BlacksPicture2 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
-          <BlacksPicture3 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
+          { picSet == 1 && (
+            <>
+              <BlacksPicture1 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
+              <BlacksPicture2 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
+              <BlacksPicture3 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
+            </>
+          )}
+
+          { picSet == 2 && (
+            <>
+              <JoePicture1 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
+              <JoePicture2 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
+              <JoePicture3 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
+            </>
+          )}
         </Suspense>
       </VRCanvas>
     </>

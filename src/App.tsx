@@ -19,6 +19,7 @@ function App() {
   const [infoModalText, setShowInfoModalText] = useState("Click a Picture to view info and buy.");
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [picSet, setPicSet] = React.useState(1);
 
   const [width, setWidth] = useState<number>(window.innerWidth);
   const isMobile = width <= 768;
@@ -48,7 +49,7 @@ function App() {
     <div className="App">
       {/*<CssBaseline /> todo add this? */}
 
-      <NavBar toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
+      <NavBar picSet={picSet} setPicSet={setPicSet} toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
 
       <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} />
       {/*<BookingModal showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />*/}
@@ -66,7 +67,7 @@ function App() {
           key={'home'}
           path="/"
           element={
-            <SpaceOne isMobile={isMobile} cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText} space={<BlacksGallery />}/>
+            <SpaceOne picSet={picSet} isMobile={isMobile} cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText} space={<BlacksGallery />}/>
           }
         />
 

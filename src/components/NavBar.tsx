@@ -7,8 +7,7 @@ import Button from '@mui/material/Button';
 import {Menu} from "@mui/icons-material";
 
 export default function NavBar(
-  {toggleLeftSideDrawer, setShowBookingModal, showBookingModal}:
-    {toggleLeftSideDrawer: any, setShowBookingModal: any, showBookingModal: any}) {
+  {toggleLeftSideDrawer, setShowBookingModal, showBookingModal, picSet, setPicSet}: any) {
   return (
     <Box component="div" sx={{ flexGrow: 1 }} className="navBar" >
       <AppBar position="fixed" color="transparent">
@@ -19,6 +18,7 @@ export default function NavBar(
           <Typography className="main-title" variant="h6" component="div" sx={{ flexGrow: 1 }} onClick={(event:any) => {toggleLeftSideDrawer(event)}}>
             {process.env.REACT_APP_NAV_TITLE}
           </Typography>
+          <Button style={{marginRight: '5px'}} color="inherit" variant="outlined" onClick={() => {picSet === 1 ? setPicSet(2) : setPicSet(1)}}>Picture Set: {picSet}</Button>
           <Button color="inherit" variant="outlined" href={`${process.env.REACT_APP_HOME_URL}`} target="_blank">Membership</Button>
         </Toolbar>
       </AppBar>

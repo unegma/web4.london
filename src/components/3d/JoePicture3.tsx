@@ -26,10 +26,10 @@ export default function JoePicture3({ setShowInfoModal, setInfoModalText, ...pro
   }, [hovered])
 
   return (
-    <group ref={group} {...props} dispose={null} rotation={[0,2.75,0]} scale={1.3} position={[-2.75,0.7,0.65]}
+    <group ref={group} {...props} dispose={null} rotation={[0,1,0]} scale={1.3} position={[0.9,0.7,-3.2]}
            onPointerOver={() => setHovered(true)}
            onPointerOut={() => setHovered(false)}
-           onClick={() => {setShowInfoModal(true); setInfoModalText('Info about Picture1 and Buy info (this actual painting is not for sale and will not be!)')}}
+           onClick={() => {setShowInfoModal(true); setInfoModalText('Info about Picture3 and Buy info (this actual painting is not for sale and will not be!)')}}
     >
       <mesh castShadow receiveShadow geometry={nodes.Picture3.geometry} material={materials.Pictures} rotation={[-1.51, -0.02, 0.36]}>
         {hovered && (
