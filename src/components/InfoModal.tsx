@@ -37,6 +37,8 @@ export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalT
         <HighlightOffIcon className="closeModalButton" onClick={() => { setShowInfoModal(false)}}/>
         <Typography variant="h3" className="secondaryColor">Info</Typography>
 
+        <img src="https://picsum.photos/seed/picsum/200/300"/>
+
         <p>{infoModalText}</p>
         <p style={{color: 'red'}}>PLEASE NOTE: THIS IS A DEMO, THESE ARE NOT ACTUAL NFTS AND NO PAINTINGS ARE FOR SALE.</p>
         <p>Pan around to see the space.</p>
