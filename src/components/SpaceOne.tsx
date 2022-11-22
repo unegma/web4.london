@@ -9,6 +9,7 @@ import { Ground } from "./3d/Ground"
 import { Player } from "./3d/Player"
 import { Cube, Cubes } from "./3d/Cube"
 import {Web4} from "./3d/Web4";
+import {Notebook} from "./3d/NoteBook";
 
 export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, picSet}: any) {
   const { player } = useXR();
@@ -128,6 +129,8 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
             </Suspense>
             <Web4></Web4>
             <Cubes />
+            {/*<Cube position={[0, 0, 0]} />*/}
+            <Notebook position={[1, 1, -10]} />
           </Physics>
           <PointerLockControls />
         </Canvas>
