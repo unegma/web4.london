@@ -8,6 +8,7 @@ import { Sky, PointerLockControls, KeyboardControls } from "@react-three/drei"
 import { Ground } from "./3d/Ground"
 import { Player } from "./3d/Player"
 import { Cube, Cubes } from "./3d/Cube"
+import {Web4} from "./3d/Web4";
 
 export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, picSet}: any) {
   const { player } = useXR();
@@ -125,7 +126,7 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
               <Ground />
               <Player />
             </Suspense>
-            <Cube position={[0, 0.5, -10]} />
+            <Web4></Web4>
             <Cubes />
           </Physics>
           <PointerLockControls />

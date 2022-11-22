@@ -42,18 +42,9 @@ export function Cube(props: any) {
   const onOut = useCallback(() => set(null), [])
   const onClick = useCallback((e: any) => {
     e.stopPropagation()
-    // @ts-ignore
-    const { x, y, z } = ref.current.translation()
-    const dir = [
-      [x + 1, y, z],
-      [x - 1, y, z],
-      [x, y + 1, z],
-      [x, y - 1, z],
-      [x, y, z + 1],
-      [x, y, z - 1],
-    ]
-    // @ts-ignore
-    addCube(...dir[Math.floor(e.faceIndex / 2)])
+
+
+
   }, [])
   return (
     <RigidBody {...props} type="fixed" colliders="cuboid" ref={ref}>
