@@ -15,8 +15,8 @@ import NFTModal from "./components/NFTModal";
 
 function App() {
   const [showImages, setShowImages] = useState(false);
-  const [showInfoModal, setShowInfoModal] = useState(true);
-  const [showNFTModal, setShowNFTModal] = useState(true);
+  const [showInfoModal, setShowInfoModal] = useState(false);
+  const [showNFTModal, setShowNFTModal] = useState(false);
   const [infoModalText, setShowInfoModalText] = useState("Click a Picture to view info and buy.");
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);

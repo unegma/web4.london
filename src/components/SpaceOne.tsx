@@ -2,7 +2,7 @@ import {DefaultXRControllers, VRCanvas, useXR} from "@react-three/xr";
 import {Html, Loader, OrbitControls, PerspectiveCamera} from "@react-three/drei";
 import React, {Suspense, useState} from "react";
 import { Physics } from "@react-three/rapier"
-const initialHelperText = '↺ or ⇉ Model';
+const initialHelperText = 'Press ESC for Website Focus';
 import { Canvas } from "@react-three/fiber"
 import { Sky, PointerLockControls, KeyboardControls } from "@react-three/drei"
 import { Ground } from "./3d/Ground"
@@ -54,6 +54,11 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
 
   return (
     <>
+      <div className={`buttons-container buttons-container--left-helper`}>
+        <p className='helperText'>{helperText}</p>
+        {/*<p className='helperText' onClick={() => {showHelperTextMessage()}}>{helperText}</p>*/}
+      </div>
+
       <Loader/>
 
       {/*<VRCanvas>*/}
