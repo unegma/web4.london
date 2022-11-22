@@ -1,6 +1,7 @@
 import {Button, createStyles, makeStyles, Modal, Theme, Typography, Box} from "@mui/material";
 import React from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import {Description} from "@mui/icons-material";
 
 export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalText }: any) {
 
@@ -42,8 +43,14 @@ export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalT
         {/*<p>{infoModalText}</p>*/}
         {/*<p style={{color: 'red'}}>PLEASE NOTE: THIS IS A DEMO, THESE ARE NOT ACTUAL NFTS AND NO PAINTINGS ARE FOR SALE.</p>*/}
         <p>Pan and move around to see the space.</p>
-        <p>PRESS ESC to exit.</p>
+        <p><b>PRESS ESC</b> to exit.</p>
         <hr/>
+
+        <p>Explore the space to find Web4Coin Tokens and then claim using your <a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Metamask/Web3 Wallet</a></p>
+
+        <hr/>
+
+        <p><a target="_blank" href={`${process.env.REACT_APP_ARTICLE_LINK}`}><Description/> Read about Web4 and why it is Important here.</a></p>
 
         {/*<Typography className="secondaryColor">*/}
         {/*  Contribute here: <a target="_blank" href={process.env.REACT_APP_GITHUB_LINK}>Github</a>.<br/>*/}

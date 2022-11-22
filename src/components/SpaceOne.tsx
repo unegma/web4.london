@@ -2,7 +2,6 @@ import {DefaultXRControllers, VRCanvas, useXR} from "@react-three/xr";
 import {Html, Loader, OrbitControls, PerspectiveCamera} from "@react-three/drei";
 import React, {Suspense, useRef, useState} from "react";
 import { Physics } from "@react-three/rapier"
-const initialHelperText = 'Press ESC for Website Focus';
 import { Canvas } from "@react-three/fiber"
 import { Sky, PointerLockControls, KeyboardControls } from "@react-three/drei"
 import { Ground } from "./3d/Ground"
@@ -11,6 +10,7 @@ import { Cube, Cubes } from "./3d/Cube"
 import {Web4} from "./3d/Web4";
 import {Notebook} from "./3d/NoteBook";
 import {NFT} from "./3d/NFT";
+const initialHelperText = 'PRESS ESC to Exit';
 
 export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, setShowNFTModal, picSet}: any) {
   const { player } = useXR();
@@ -32,6 +32,14 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
 
     alert(helperTextAlertMessage);
   };
+
+  // function loaded (event: any) {
+  //   console.log('hi')
+  //   setTimeout(() => {
+  //     // @ts-ignore
+  //     pointerControls.current.lock();
+  //   },100);
+  // }
 
   const toggleGridOn = () => {
     setGridOn(!gridOn);
@@ -93,23 +101,6 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
       {/*  /!*<PerspectiveCamera position={cameraPosition} fov={12} makeDefault/>*!/*/}
 
       {/*  <Suspense>*/}
-      {/*    {space}*/}
-
-      {/*    { picSet == 1 && (*/}
-      {/*      <>*/}
-      {/*        <BlacksPicture1 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
-      {/*        <BlacksPicture2 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
-      {/*        <BlacksPicture3 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
-      {/*      </>*/}
-      {/*    )}*/}
-
-      {/*    { picSet == 2 && (*/}
-      {/*      <>*/}
-      {/*        <JoePicture1 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
-      {/*        <JoePicture2 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
-      {/*        <JoePicture3 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
-      {/*      </>*/}
-      {/*    )}*/}
       {/*  </Suspense>*/}
       {/*</VRCanvas>*/}
 
