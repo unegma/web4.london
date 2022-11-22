@@ -1,12 +1,25 @@
 import * as THREE from "three"
 import { useTexture } from "@react-three/drei"
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
-// import grass from "./assets/grass.jpg"
-const grass = `${process.env.REACT_APP_ASSETS_URL}/grass.jpg`;
+import {useLoader} from "@react-three/fiber";
+import {CubeTextureLoader} from "three";
+
+// todo fixme
+let imgs = {
+  grass: `${process.env.REACT_APP_ASSETS_URL}/grass.jpg`,
+};
+
 
 
 export function Ground(props: any) {
-  const texture = useTexture(grass)
+  // const texture = useLoader(THREE.TextureLoader, image)
+
+  const loader = new CubeTextureLoader();
+  // The CubeTextureLoader load method takes an array of urls representing all 6 sides of the cube.
+  const texture = loader.load([
+    imgs.grass,
+  ]);
+
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping
   return (
     <RigidBody {...props} type="fixed" colliders={false}>

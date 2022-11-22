@@ -3,15 +3,16 @@ import {Html, Loader, OrbitControls, PerspectiveCamera} from "@react-three/drei"
 import React, {Suspense, useState} from "react";
 import {Menu, ZoomIn, ZoomOut} from "@mui/icons-material";
 import GridOnIcon from "@mui/icons-material/GridOn";
-import BlacksPicture1 from "./3d/BlacksPicture1";
-import BlacksPicture2 from "./3d/BlacksPicture2";
-import BlacksPicture3 from "./3d/BlacksPicture3";
-import JoePicture1 from "./3d/JoePicture1";
-import JoePicture2 from "./3d/JoePicture2";
-import JoePicture3 from "./3d/JoePicture3";
-const initialHelperText = '↺ or ⇉ Model';
+import { Physics } from "@react-three/rapier"
 
-export default function SpaceOne({isMobile, space, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, picSet}: any) {
+const initialHelperText = '↺ or ⇉ Model';
+import { Canvas } from "@react-three/fiber"
+import { Sky, PointerLockControls, KeyboardControls } from "@react-three/drei"
+import { Ground } from "./3d/Ground"
+import { Player } from "./3d/Player"
+// import { Cube, Cubes } from "./Cube"
+
+export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, picSet}: any) {
   const { player } = useXR();
 
   const [gridOn, setGridOn] = useState(false);
@@ -70,55 +71,81 @@ export default function SpaceOne({isMobile, space, cameraPosition, setShowInfoMo
 
       <Loader/>
 
-      <VRCanvas>
-        <DefaultXRControllers />
+      {/*<VRCanvas>*/}
+      {/*  <DefaultXRControllers />*/}
 
-        {/*lock zoom to keep dolls house view. Can use minPolarAngle={Math.PI/2.1} maxPolarAngle={Math.PI/2.1} to lock rotation */}
-        {/*<OrbitControls enableZoom={zoomOn} enablePan={true} />*/}
-        {/*todo add zoom controls*/}
+      {/*  /!*lock zoom to keep dolls house view. Can use minPolarAngle={Math.PI/2.1} maxPolarAngle={Math.PI/2.1} to lock rotation *!/*/}
+      {/*  /!*<OrbitControls enableZoom={zoomOn} enablePan={true} />*!/*/}
+      {/*  /!*todo add zoom controls*!/*/}
 
-        { isMobile === false && (
-          <OrbitControls
-            enableZoom={false} enablePan={false} minDistance={4} maxDistance={10}
-            minPolarAngle={1} maxPolarAngle={1.75}
-            maxAzimuthAngle={1.4} minAzimuthAngle={0.8}
-          />
-        )}
+      {/*  { isMobile === false && (*/}
+      {/*    <OrbitControls*/}
+      {/*      enableZoom={false} enablePan={false} minDistance={4} maxDistance={10}*/}
+      {/*      minPolarAngle={1} maxPolarAngle={1.75}*/}
+      {/*      maxAzimuthAngle={1.4} minAzimuthAngle={0.8}*/}
+      {/*    />*/}
+      {/*  )}*/}
 
 
-        { isMobile === true && (
-          <OrbitControls
-            enableZoom={false} enablePan={false} minDistance={4} maxDistance={10}
-            minPolarAngle={1} maxPolarAngle={1.75}
-            maxAzimuthAngle={2} minAzimuthAngle={-0.1}
-          />
-        )}
+      {/*  { isMobile === true && (*/}
+      {/*    <OrbitControls*/}
+      {/*      enableZoom={false} enablePan={false} minDistance={4} maxDistance={10}*/}
+      {/*      minPolarAngle={1} maxPolarAngle={1.75}*/}
+      {/*      maxAzimuthAngle={2} minAzimuthAngle={-0.1}*/}
+      {/*    />*/}
+      {/*  )}*/}
 
-        <ambientLight/>
-        <pointLight intensity={2} position={[0, 0, 0]}/>
-        <PerspectiveCamera position={cameraPosition} makeDefault rotation={[0,-1,0]}/>
-        {/*<PerspectiveCamera position={cameraPosition} fov={12} makeDefault/>*/}
+      {/*  <ambientLight/>*/}
+      {/*  <pointLight intensity={2} position={[0, 0, 0]}/>*/}
+      {/*  <PerspectiveCamera position={cameraPosition} makeDefault rotation={[0,-1,0]}/>*/}
+      {/*  /!*<PerspectiveCamera position={cameraPosition} fov={12} makeDefault/>*!/*/}
 
-        <Suspense>
-          {space}
+      {/*  <Suspense>*/}
+      {/*    {space}*/}
 
-          { picSet == 1 && (
-            <>
-              <BlacksPicture1 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
-              <BlacksPicture2 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
-              <BlacksPicture3 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
-            </>
-          )}
+      {/*    { picSet == 1 && (*/}
+      {/*      <>*/}
+      {/*        <BlacksPicture1 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
+      {/*        <BlacksPicture2 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
+      {/*        <BlacksPicture3 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
+      {/*      </>*/}
+      {/*    )}*/}
 
-          { picSet == 2 && (
-            <>
-              <JoePicture1 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
-              <JoePicture2 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
-              <JoePicture3 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />
-            </>
-          )}
-        </Suspense>
-      </VRCanvas>
+      {/*    { picSet == 2 && (*/}
+      {/*      <>*/}
+      {/*        <JoePicture1 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
+      {/*        <JoePicture2 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
+      {/*        <JoePicture3 setShowInfoModal={setShowInfoModal} setInfoModalText={setInfoModalText} />*/}
+      {/*      </>*/}
+      {/*    )}*/}
+      {/*  </Suspense>*/}
+      {/*</VRCanvas>*/}
+
+      <KeyboardControls
+        map={[
+          { name: "forward", keys: ["ArrowUp", "w", "W"] },
+          { name: "backward", keys: ["ArrowDown", "s", "S"] },
+          { name: "left", keys: ["ArrowLeft", "a", "A"] },
+          { name: "right", keys: ["ArrowRight", "d", "D"] },
+          { name: "jump", keys: ["Space"] },
+        ]}>
+        <Canvas shadows camera={{ fov: 45 }}>
+          <Sky sunPosition={[100, 20, 100]} />
+          <ambientLight intensity={0.3} />
+          <pointLight castShadow intensity={0.8} position={[100, 100, 100]} />
+          <Physics gravity={[0, -30, 0]}>
+
+            {/*<Suspense>*/}
+            <Ground />
+            <Player />
+            {/*</Suspense>*/}
+
+            {/*<Cube position={[0, 0.5, -10]} />*/}
+            {/*<Cubes />*/}
+          </Physics>
+          <PointerLockControls />
+        </Canvas>
+      </KeyboardControls>
     </>
   )
 }

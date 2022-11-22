@@ -10,7 +10,6 @@ import InfoModal from "./components/InfoModal";
 import LeftSideDrawer from "./components/LeftSideDrawer";
 import HomeScreen from "./components/HomeScreen";
 import SpaceOne from "./components/SpaceOne";
-import BlacksGallery from "./components/BlacksGallery";
 // import BookingModal from "./components/BookingModal";
 
 function App() {
@@ -67,7 +66,7 @@ function App() {
           key={'home'}
           path="/"
           element={
-            <SpaceOne picSet={picSet} isMobile={isMobile} cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText} space={<BlacksGallery />}/>
+            <SpaceOne picSet={picSet} isMobile={isMobile} cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText}/>
           }
         />
 
