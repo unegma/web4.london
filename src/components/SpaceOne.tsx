@@ -1,8 +1,6 @@
 import {DefaultXRControllers, VRCanvas, useXR} from "@react-three/xr";
 import {Html, Loader, OrbitControls, PerspectiveCamera} from "@react-three/drei";
 import React, {Suspense, useState} from "react";
-import {Menu, ZoomIn, ZoomOut} from "@mui/icons-material";
-import GridOnIcon from "@mui/icons-material/GridOn";
 import { Physics } from "@react-three/rapier"
 
 const initialHelperText = '↺ or ⇉ Model';
@@ -54,21 +52,6 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
 
   return (
     <>
-      {/*<div className={`buttons-container buttons-container--left-helper`}>*/}
-      {/*  <p className='helperText' onClick={() => {showHelperTextMessage()}}>{helperText}</p>*/}
-      {/*</div>*/}
-
-      {/*<div className={`buttons-container buttons-container--mid-right`}>*/}
-      {/*  <GridOnIcon className="pointer" style={{ color: "white", margin: "4px 4px" }} onClick={() => {toggleGridOn()}}/>*/}
-
-      {/*  { zoomOn && (*/}
-      {/*    <ZoomIn className="pointer" style={{ color: "white", margin: "4px 4px" }} onClick={() => {toggleZoomOn()}}/>*/}
-      {/*  )}*/}
-      {/*  { !zoomOn && (*/}
-      {/*    <ZoomOut className="pointer" style={{ color: "white", margin: "4px 4px" }} onClick={() => {toggleZoomOn()}}/>*/}
-      {/*  )}*/}
-      {/*</div>*/}
-
       <Loader/>
 
       {/*<VRCanvas>*/}
@@ -121,6 +104,10 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
       {/*  </Suspense>*/}
       {/*</VRCanvas>*/}
 
+      {/*// Credit: The original was made by Maksim Ivanow: https://www.youtube.com/watch?v=Lc2JvBXMesY&t=124s*/}
+      {/*// This demo needs pointer-lock, that works only if you open it in a new window*/}
+      {/*// Controls: WASD + left click*/}
+
       <KeyboardControls
         map={[
           { name: "forward", keys: ["ArrowUp", "w", "W"] },
@@ -135,10 +122,10 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
           <pointLight castShadow intensity={0.8} position={[100, 100, 100]} />
           <Physics gravity={[0, -30, 0]}>
 
-            {/*<Suspense>*/}
-            <Ground />
-            <Player />
-            {/*</Suspense>*/}
+            <Suspense>
+              <Ground />
+              <Player />
+            </Suspense>
 
             {/*<Cube position={[0, 0.5, -10]} />*/}
             {/*<Cubes />*/}
