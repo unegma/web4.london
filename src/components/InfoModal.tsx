@@ -31,6 +31,9 @@ export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalT
       className="info-modal"
       open={showInfoModal}
       onClose={handleClose}
+      onClick={(e:any) => {
+        e.preventDefault()
+      }}
       // aria-labelledby="simple-modal-title"
       // aria-describedby="simple-modal-description"
     >

@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import {Book, BookOutlined, Description, InsertPhoto, LibraryBooks, Menu, Note, Notes} from "@mui/icons-material";
+import Web3ConnectionButtons from "./layout/Web3ConnectionButtons";
 
 export default function NavBar(
   {toggleLeftSideDrawer, setShowBookingModal, showBookingModal, picSet, setPicSet}: any) {
@@ -20,6 +21,8 @@ export default function NavBar(
           </Typography>
           {/*<Button style={{marginRight: '5px', color: 'black'}} color="inherit" variant="contained" onClick={() => {picSet === 1 ? setPicSet(2) : setPicSet(1)}}><InsertPhoto/> Set: {picSet}</Button>*/}
           <Button color="inherit" variant="outlined" href={`${process.env.REACT_APP_ARTICLE_LINK}`} target="_blank"><Description/>&nbsp;Why Web4</Button>
+          <Web3ConnectionButtons className='connect-button' />
+
         </Toolbar>
       </AppBar>
     </Box>

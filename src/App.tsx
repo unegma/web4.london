@@ -12,15 +12,33 @@ import HomeScreen from "./components/HomeScreen";
 import SpaceOne from "./components/SpaceOne";
 import CoinModal from "./components/CoinModal";
 // import BookingModal from "./components/BookingModal";
+import {getTokenData} from './helpers/subgraphCalls';
+import {getReserveBalance, initiateClaim} from './helpers/web3Functions';
+import {useWeb3React} from "@web3-react/core";
+import {Web3Provider} from "@ethersproject/providers";
+import {Signer} from "ethers";
 
 function App() {
+  const context = useWeb3React<Web3Provider>(); // todo check because this web3provider is from ethers
+  const { connector, library, chainId, account, activate, deactivate, active, error }: any = context;
+  const [signer, setSigner] = useState<Signer|undefined>(undefined);
+  const [buttonLock, setButtonLock] = useState(false);
   const [showImages, setShowImages] = useState(false);
+  const [tokenAddress, setTokenAddress] = React.useState(process.env.REACT_APP_WEB4COIN_ADDRESS as string); // this is now retrieved from the url
   const [showInfoModal, setShowInfoModal] = useState(true);
   const [showNFTModal, setShowNFTModal] = useState(false);
   const [infoModalText, setShowInfoModalText] = useState("Click a Picture to view info and buy.");
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [picSet, setPicSet] = React.useState(1);
+  const [claimComplete, setClaimComplete] = React.useState(false); // used to update user balance when complete
+
+  // all these from .env will be replaced by calls to blockchain within the getTokenData function when faucetView is set to true
+  const [reserveClaimable, setReserveClaimable] = useState(process.env.REACT_APP_RESERVE_CLAIMABLE as string);
+  const [reserveDecimals, setReserveDecimals] = useState(process.env.REACT_APP_RESERVE_ERC20_DECIMALS as string);
+  const [reserveName, setReserveName] = React.useState(process.env.REACT_APP_RESERVE_NAME as string);
+  const [reserveSymbol, setReserveSymbol] = React.useState(process.env.REACT_APP_RESERVE_SYMBOL as string);
+  const [reserveBalance, setReserveBalance] = React.useState("?");
 
   const [width, setWidth] = useState<number>(window.innerWidth);
   const isMobile = width <= 768;
@@ -36,6 +54,23 @@ function App() {
     }
   }, []);
 
+  // this relies on useEffect above to get tokenAddress from url // todo may be able to merge this one with the above one
+  // todo check this section because it is different in all frontends
+  // TODO CHECK THIS WORKS WITH INJECTED CONNECTOR
+  // TODO CHECK IF THIS WORKS WITHOUT SIGNER ON SALE EXAMPLE
+  useEffect(() => {
+    // todo check this still works with new url parameter
+    if (tokenAddress) {
+      getTokenData(tokenAddress, setReserveName, setReserveSymbol, setReserveDecimals);
+    }
+  }, [tokenAddress]); // only get sale data when signer and saleAddress have been loaded // monitor saleComplete so that the amount displayed on the button is updated when the sale is finished
+
+  // user balance of reserveToken
+  useEffect(() => {
+    if (signer) {
+      getReserveBalance(signer,account,tokenAddress,setReserveBalance);
+    }
+  }, [signer, account, tokenAddress, claimComplete])
 
   const toggleLeftSideDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
       if (event.type === 'keydown' && (
@@ -53,7 +88,7 @@ function App() {
       <NavBar picSet={picSet} setPicSet={setPicSet} toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
 
       <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} />
-      <CoinModal showNFTModal={showNFTModal} setShowNFTModal={setShowNFTModal} />
+      <CoinModal initiateClaim={initiateClaim} buttonLock={buttonLock} setButtonLock={setButtonLock} showNFTModal={showNFTModal} setShowNFTModal={setShowNFTModal} />
       {/*<BookingModal showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />*/}
       {/*<PhotoViewer showImages={showImages} />*/}
 

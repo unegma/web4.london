@@ -2,7 +2,7 @@ import {Button, createStyles, makeStyles, Modal, Theme, Typography, Box} from "@
 import React from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
-export default function CoinModal ({ showNFTModal, setShowNFTModal, infoModalText }: any) {
+export default function CoinModal ({ initiateClaim, buttonLock, setButtonLock, showNFTModal, setShowNFTModal, infoModalText }: any) {
 
   const handleClose = () => {
     setShowNFTModal(false);
@@ -30,6 +30,9 @@ export default function CoinModal ({ showNFTModal, setShowNFTModal, infoModalTex
       className="info-modal"
       open={showNFTModal}
       onClose={handleClose}
+      onClick={(e:any) => {
+        e.preventDefault()
+      }}
       // aria-labelledby="simple-modal-title"
       // aria-describedby="simple-modal-description"
     >
@@ -45,6 +48,7 @@ export default function CoinModal ({ showNFTModal, setShowNFTModal, infoModalTex
         <p>You will need to be connected to <a target="_blank" href="https://chainlist.org/chain/137"><b>Polygon</b>.</a></p>
         <hr/>
 
+        <Button disabled={buttonLock} className="fifty-percent-button" variant="contained" onClick={initiateClaim}>Get 100 Web4Coin!</Button>
         {/*<Typography className="secondaryColor">*/}
         {/*  Contribute here: <a target="_blank" href={process.env.REACT_APP_GITHUB_LINK}>Github</a>.<br/>*/}
         {/*  <span>Made by <a target="_blank" href="https://unegma.com">unegma</a>.</span>*/}
