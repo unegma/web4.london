@@ -2,13 +2,12 @@ import {DefaultXRControllers, VRCanvas, useXR} from "@react-three/xr";
 import {Html, Loader, OrbitControls, PerspectiveCamera} from "@react-three/drei";
 import React, {Suspense, useState} from "react";
 import { Physics } from "@react-three/rapier"
-
 const initialHelperText = '↺ or ⇉ Model';
 import { Canvas } from "@react-three/fiber"
 import { Sky, PointerLockControls, KeyboardControls } from "@react-three/drei"
 import { Ground } from "./3d/Ground"
 import { Player } from "./3d/Player"
-// import { Cube, Cubes } from "./Cube"
+import { Cube, Cubes } from "./3d/Cube"
 
 export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, picSet}: any) {
   const { player } = useXR();
@@ -126,9 +125,8 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
               <Ground />
               <Player />
             </Suspense>
-
-            {/*<Cube position={[0, 0.5, -10]} />*/}
-            {/*<Cubes />*/}
+            <Cube position={[0, 0.5, -10]} />
+            <Cubes />
           </Physics>
           <PointerLockControls />
         </Canvas>
