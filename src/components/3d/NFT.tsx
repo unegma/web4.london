@@ -39,6 +39,10 @@ export function NFT({pointerControls, setShowNFTModal, ...props}: any) {
   const onClick = useCallback((e: any) => {
     e.stopPropagation()
     setShowNFTModal(true);
+
+    setTimeout(() => {
+      pointerControls.current.unlock();
+    },100);
   }, [])
   return (
     <RigidBody {...props} type="fixed" colliders="ball" ref={ref}>
