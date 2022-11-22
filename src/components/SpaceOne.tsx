@@ -10,7 +10,7 @@ import { Cube, Cubes } from "./3d/Cube"
 import {Web4} from "./3d/Web4";
 import {Notebook} from "./3d/NoteBook";
 import {NFT} from "./3d/NFT";
-const initialHelperText = 'PRESS ESC to Exit';
+const initialHelperText = 'PRESS ESC to disengage MetaSpace';
 
 export default function SpaceOne({pointerControls, isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, setShowNFTModal, picSet}: any) {
   const { player } = useXR();

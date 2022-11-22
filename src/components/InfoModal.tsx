@@ -44,11 +44,17 @@ export default function InfoModal ({ pointerControls, showInfoModal, setShowInfo
 
         {/*<p>{infoModalText}</p>*/}
         {/*<p style={{color: 'red'}}>PLEASE NOTE: THIS IS A DEMO, THESE ARE NOT ACTUAL NFTS AND NO PAINTINGS ARE FOR SALE.</p>*/}
-        <p>Pan and move around to see the space.</p>
-        <p><b>PRESS ESC</b> to exit.</p>
+        <p className='red'>CURRENTLY DESKTOP ONLY, not mobile optimised.</p>
+
         <hr/>
 
-        <p>Explore the space to find <b>Web4Coin Tokens</b>.</p>
+        <p><b>Instructions:</b></p>
+        <p>Click to Engage MetaSpace.</p>
+        <p>Move with Keyboard/Mouse/Trackpad to see the Web4 London MetaSpace.</p>
+        <p>Click objects to interact.</p>
+        <p>Explore to find <b>Web4Coin Tokens</b>.</p>
+        <p><b>PRESS ESC</b> to disengage MetaSpace.</p>
+
 
         <hr/>
 
