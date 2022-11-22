@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
-// import { injected, walletconnect } from "../../helpers/connectors";
-import { injected } from "../../helpers/connectors";
+import { injected, walletconnect } from "../../helpers/connectors";
 import { useEagerConnect, useInactiveListener } from "../../helpers/hooks";
 import getErrorMessage from "../../helpers/getErrorMessage";
 import { Spinner } from "./Spinner";
@@ -31,12 +30,12 @@ const modalStyle = {
 
 enum ConnectorNames {
   Metamask = 'Metamask',
-  // WalletConnect = 'WalletConnect'
+  WalletConnect = 'WalletConnect'
 }
 
 const connectorsByName: { [connectorName in ConnectorNames]: any} = {
   [ConnectorNames.Metamask]: injected,
-  // [ConnectorNames.WalletConnect]: walletconnect
+  [ConnectorNames.WalletConnect]: walletconnect
 }
 
 export default function Web3ConnectionButtons({setAddress, setSettingsOpen}: any) {

@@ -32,6 +32,9 @@ function App() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [picSet, setPicSet] = React.useState(1);
   const [claimComplete, setClaimComplete] = React.useState(false); // used to update user balance when complete
+  const [consoleData, setConsoleData] = React.useState("");
+  const [consoleColor, setConsoleColor] = React.useState('red');
+  const [loading, setLoading] = useState(false);
 
   // all these from .env will be replaced by calls to blockchain within the getTokenData function when faucetView is set to true
   const [reserveClaimable, setReserveClaimable] = useState(process.env.REACT_APP_RESERVE_CLAIMABLE as string);
@@ -53,6 +56,10 @@ function App() {
       console.log(isMobile)
     }
   }, []);
+
+  useEffect(() => {
+    setSigner(library?.getSigner());
+  }, [library, account]);
 
   // this relies on useEffect above to get tokenAddress from url // todo may be able to merge this one with the above one
   // todo check this section because it is different in all frontends
@@ -88,7 +95,14 @@ function App() {
       <NavBar picSet={picSet} setPicSet={setPicSet} toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
 
       <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} />
-      <CoinModal initiateClaim={initiateClaim} buttonLock={buttonLock} setButtonLock={setButtonLock} showNFTModal={showNFTModal} setShowNFTModal={setShowNFTModal} />
+      <CoinModal
+        initiateClaim={() => initiateClaim(
+          signer, setButtonLock,setLoading,account,setConsoleData,setConsoleColor, tokenAddress, setClaimComplete
+        )}
+        buttonLock={buttonLock} setButtonLock={setButtonLock} showNFTModal={showNFTModal} setShowNFTModal={setShowNFTModal}
+        reserveBalance={reserveBalance} reserveSymbol={reserveSymbol} tokenAddress={tokenAddress}
+      />
+
       {/*<BookingModal showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />*/}
       {/*<PhotoViewer showImages={showImages} />*/}
 
