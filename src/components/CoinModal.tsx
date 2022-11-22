@@ -2,7 +2,7 @@ import {Button, createStyles, makeStyles, Modal, Theme, Typography, Box} from "@
 import React from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
-export default function CoinModal ({ reserveBalance, reserveSymbol, tokenAddress, initiateClaim, buttonLock, setButtonLock, showNFTModal, setShowNFTModal, infoModalText }: any) {
+export default function CoinModal ({ pointerControls, reserveBalance, reserveSymbol, tokenAddress, initiateClaim, buttonLock, setButtonLock, showNFTModal, setShowNFTModal, infoModalText }: any) {
 
   const handleClose = () => {
     setShowNFTModal(false);
@@ -30,9 +30,8 @@ export default function CoinModal ({ reserveBalance, reserveSymbol, tokenAddress
       className="info-modal"
       open={showNFTModal}
       onClose={handleClose}
-      onClick={(e:any) => {
-        e.preventDefault()
-      }}
+      onClick={() => setTimeout(() => {pointerControls.current.unlock()},100)}
+
       // aria-labelledby="simple-modal-title"
       // aria-describedby="simple-modal-description"
     >
@@ -49,7 +48,7 @@ export default function CoinModal ({ reserveBalance, reserveSymbol, tokenAddress
         <hr/>
 
         <Typography className="modalText">
-          <span className='yourBalance'>Your Balance: <b>{reserveBalance}{reserveSymbol}</b></span>.<br/>
+          <span className='yourBalance'>Your Balance: <b>{reserveBalance} {reserveSymbol}</b></span>.<br/>
           <p>To see these tokens in your Wallet,&nbsp;
           <a href="#" onClick={(event: any) =>
           {event.preventDefault();alert(`Copy: ${tokenAddress} to clipboard and import token in to your Wallet.`)}}

@@ -12,10 +12,8 @@ import {Notebook} from "./3d/NoteBook";
 import {NFT} from "./3d/NFT";
 const initialHelperText = 'PRESS ESC to Exit';
 
-export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, setShowNFTModal, picSet}: any) {
+export default function SpaceOne({pointerControls, isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, setShowNFTModal, picSet}: any) {
   const { player } = useXR();
-
-  const pointerControls = useRef(null);
 
   const [gridOn, setGridOn] = useState(false);
   const [zoomOn, setZoomOn] = useState(false);

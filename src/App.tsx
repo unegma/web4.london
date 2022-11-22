@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   Route, Routes
 } from "react-router-dom";
@@ -22,6 +22,9 @@ function App() {
   const context = useWeb3React<Web3Provider>(); // todo check because this web3provider is from ethers
   const { connector, library, chainId, account, activate, deactivate, active, error }: any = context;
   const [signer, setSigner] = useState<Signer|undefined>(undefined);
+
+  const pointerControls = useRef(null);
+
   const [buttonLock, setButtonLock] = useState(false);
   const [showImages, setShowImages] = useState(false);
   const [tokenAddress, setTokenAddress] = React.useState(process.env.REACT_APP_WEB4COIN_ADDRESS as string); // this is now retrieved from the url
@@ -92,10 +95,11 @@ function App() {
     <div className="App">
       {/*<CssBaseline /> todo add this? */}
 
-      <NavBar picSet={picSet} setPicSet={setPicSet} toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
+      <NavBar pointerControls={pointerControls} picSet={picSet} setPicSet={setPicSet} toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
 
-      <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} />
+      <InfoModal pointerControls={pointerControls} showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} />
       <CoinModal
+        pointerControls={pointerControls}
         initiateClaim={() => initiateClaim(
           signer, setButtonLock,setLoading,account,setConsoleData,setConsoleColor, tokenAddress, setClaimComplete
         )}
@@ -118,7 +122,7 @@ function App() {
           key={'home'}
           path="/"
           element={
-            <SpaceOne picSet={picSet} isMobile={isMobile} cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} setShowNFTModal={setShowNFTModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText}/>
+            <SpaceOne pointerControls={pointerControls} picSet={picSet} isMobile={isMobile} cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} setShowNFTModal={setShowNFTModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText}/>
           }
         />
 

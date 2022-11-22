@@ -3,7 +3,7 @@ import React from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import {Description, People, Telegram} from "@mui/icons-material";
 
-export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalText }: any) {
+export default function InfoModal ({ pointerControls, showInfoModal, setShowInfoModal, infoModalText }: any) {
 
   const handleClose = () => {
     setShowInfoModal(false);
@@ -31,9 +31,8 @@ export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalT
       className="info-modal"
       open={showInfoModal}
       onClose={handleClose}
-      onClick={(e:any) => {
-        e.preventDefault()
-      }}
+      onClick={() => setTimeout(() => {pointerControls.current.unlock()},100)}
+
       // aria-labelledby="simple-modal-title"
       // aria-describedby="simple-modal-description"
     >

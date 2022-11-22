@@ -38,7 +38,7 @@ const connectorsByName: { [connectorName in ConnectorNames]: any} = {
   [ConnectorNames.WalletConnect]: walletconnect
 }
 
-export default function Web3ConnectionButtons({setAddress, setSettingsOpen}: any) {
+export default function Web3ConnectionButtons({pointerControls, setAddress, setSettingsOpen}: any) {
   const context = useWeb3React<Web3Provider>(); // todo check because this web3provider is from ethers
   const { connector, library, chainId, account, activate, deactivate, active, error } = context;
 
@@ -81,6 +81,7 @@ export default function Web3ConnectionButtons({setAddress, setSettingsOpen}: any
       <Modal
         open={modalOpen}
         onClose={hideModal}
+        onClick={() => setTimeout(() => {pointerControls.current.unlock()},100)}
         // className="connection-modal"
       >
         <Box component="div" sx={modalStyle} className={`modalBoxContainer`} >
