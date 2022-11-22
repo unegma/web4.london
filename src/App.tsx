@@ -10,11 +10,13 @@ import InfoModal from "./components/InfoModal";
 import LeftSideDrawer from "./components/LeftSideDrawer";
 import HomeScreen from "./components/HomeScreen";
 import SpaceOne from "./components/SpaceOne";
+import NFTModal from "./components/NFTModal";
 // import BookingModal from "./components/BookingModal";
 
 function App() {
   const [showImages, setShowImages] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(true);
+  const [showNFTModal, setShowNFTModal] = useState(true);
   const [infoModalText, setShowInfoModalText] = useState("Click a Picture to view info and buy.");
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -51,6 +53,7 @@ function App() {
       <NavBar picSet={picSet} setPicSet={setPicSet} toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
 
       <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} />
+      <NFTModal showNFTModal={showNFTModal} setShowNFTModal={setShowNFTModal} />
       {/*<BookingModal showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />*/}
       {/*<PhotoViewer showImages={showImages} />*/}
 
@@ -66,7 +69,7 @@ function App() {
           key={'home'}
           path="/"
           element={
-            <SpaceOne picSet={picSet} isMobile={isMobile} cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText}/>
+            <SpaceOne picSet={picSet} isMobile={isMobile} cameraPosition={[0.1,0.8,0.1]} setShowInfoModal={setShowInfoModal} setShowNFTModal={setShowNFTModal} infoModalText={infoModalText} setInfoModalText={setShowInfoModalText}/>
           }
         />
 

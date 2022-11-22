@@ -6,30 +6,30 @@ import {useLoader} from "@react-three/fiber";
 import * as THREE from "three";
 
 let imgs = {
-  dirt: `${process.env.REACT_APP_ASSETS_URL}/notebook.jpg`,
+  nft: `${process.env.REACT_APP_ASSETS_URL}/nft.png`,
 };
 
-const useNotebookStore = create((set) => ({
-  notebooks: [],
-  addNotebook: (x: any, y: any, z: any) => { // @ts-ignore
-    set((state: any) => ({ notebooks: [...state.notebooks, [x, y, z]] }))
+const useNFTStore = create((set) => ({
+  nfts: [],
+  addNFT: (x: any, y: any, z: any) => { // @ts-ignore
+    set((state: any) => ({ nfts: [...state.nfts, [x, y, z]] }))
   },
 }))
 
-export const Notebooks = (props: any) => {
-  const notebooks = useNotebookStore((state) => state.notebooks)
+export const NFTs = (props: any) => {
+  const nfts = useNFTStore((state) => state.nfts)
   return (
     <>
-      {notebooks.map((coords, index) => <Notebook key={index} position={coords}/>)}
+      {nfts.map((coords, index) => <NFT key={index} position={coords}/>)}
     </>
   )
 }
 
-export function Notebook({setShowInfoModal, ...props}: any) {
-  const texture = useLoader(THREE.TextureLoader, imgs.dirt);
+export function NFT({setShowNFTModal, ...props}: any) {
+  const texture = useLoader(THREE.TextureLoader, imgs.nft);
   const ref = useRef()
   const [hover, set] = useState(null)
-  const addNotebook = useNotebookStore((state) => state.addNotebook)
+  const addNFT = useNFTStore((state) => state.addNFT)
   const onMove = useCallback((e: any) => {
     e.stopPropagation()
     // @ts-ignore
@@ -38,10 +38,10 @@ export function Notebook({setShowInfoModal, ...props}: any) {
   const onOut = useCallback(() => set(null), [])
   const onClick = useCallback((e: any) => {
     e.stopPropagation()
-    setShowInfoModal(true);
+    setShowNFTModal(true);
   }, [])
   return (
-    <RigidBody {...props} type="fixed" colliders="cuboid" ref={ref}>
+    <RigidBody {...props} type="fixed" colliders="ball" ref={ref}>
       <mesh receiveShadow castShadow onPointerMove={onMove} onPointerOut={onOut} onClick={onClick}>
         {[...Array(6)].map((_, index) => (
           <meshStandardMaterial attach={`material-${index}`} key={index} map={texture} color={hover === index ? "hotpink" : "white"} />

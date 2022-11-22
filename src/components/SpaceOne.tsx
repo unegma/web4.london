@@ -10,8 +10,9 @@ import { Player } from "./3d/Player"
 import { Cube, Cubes } from "./3d/Cube"
 import {Web4} from "./3d/Web4";
 import {Notebook} from "./3d/NoteBook";
+import {NFT} from "./3d/NFT";
 
-export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, picSet}: any) {
+export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, setShowNFTModal, picSet}: any) {
   const { player } = useXR();
 
   const [gridOn, setGridOn] = useState(false);
@@ -130,7 +131,8 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
             <Web4></Web4>
             <Cubes />
             {/*<Cube position={[0, 0, 0]} />*/}
-            <Notebook position={[1, 1, -10]} />
+            <Notebook setShowInfoModal={setShowInfoModal} position={[1, 1, -10]} />
+            <NFT setShowNFTModal={setShowNFTModal} position={[12, 0, -11]} />
           </Physics>
           <PointerLockControls />
         </Canvas>
