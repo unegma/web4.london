@@ -2,7 +2,7 @@ import {Button, createStyles, makeStyles, Modal, Theme, Typography, Box} from "@
 import React from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
-export default function NFTModal ({ showNFTModal, setShowNFTModal, infoModalText }: any) {
+export default function CoinModal ({ showNFTModal, setShowNFTModal, infoModalText }: any) {
 
   const handleClose = () => {
     setShowNFTModal(false);
@@ -40,9 +40,9 @@ export default function NFTModal ({ showNFTModal, setShowNFTModal, infoModalText
         {/*<img src="https://picsum.photos/seed/picsum/200/300"/>*/}
 
         {/*<p>{infoModalText}</p>*/}
-        {/*<p style={{color: 'red'}}>PLEASE NOTE: THIS IS A DEMO, THESE ARE NOT ACTUAL NFTS AND NO PAINTINGS ARE FOR SALE.</p>*/}
-        <p>Pan and move around to see the space.</p>
-        <p>PRESS ESC to exit.</p>
+        <p style={{color: 'red'}}>YOU FOUND WEB4TOKENS!</p>
+        <p>Claim using your <a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Metamask/Web3 Wallet</a>.</p>
+        <p>You will need to be connected to <a target="_blank" href="https://chainlist.org/chain/137"><b>Polygon</b>.</a></p>
         <hr/>
 
         {/*<Typography className="secondaryColor">*/}

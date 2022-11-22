@@ -10,7 +10,7 @@ import InfoModal from "./components/InfoModal";
 import LeftSideDrawer from "./components/LeftSideDrawer";
 import HomeScreen from "./components/HomeScreen";
 import SpaceOne from "./components/SpaceOne";
-import NFTModal from "./components/NFTModal";
+import CoinModal from "./components/CoinModal";
 // import BookingModal from "./components/BookingModal";
 
 function App() {
@@ -53,7 +53,7 @@ function App() {
       <NavBar picSet={picSet} setPicSet={setPicSet} toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
 
       <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} />
-      <NFTModal showNFTModal={showNFTModal} setShowNFTModal={setShowNFTModal} />
+      <CoinModal showNFTModal={showNFTModal} setShowNFTModal={setShowNFTModal} />
       {/*<BookingModal showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />*/}
       {/*<PhotoViewer showImages={showImages} />*/}
 

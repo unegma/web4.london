@@ -46,7 +46,7 @@ export default function InfoModal ({ showInfoModal, setShowInfoModal, infoModalT
         <p><b>PRESS ESC</b> to exit.</p>
         <hr/>
 
-        <p>Explore the space to find <b>Web4Coin Tokens</b> and then claim using your <a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Metamask/Web3 Wallet</a></p>
+        <p>Explore the space to find <b>Web4Coin Tokens</b>.</p>
 
         <hr/>
 
