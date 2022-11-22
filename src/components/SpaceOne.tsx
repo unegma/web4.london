@@ -1,6 +1,6 @@
 import {DefaultXRControllers, VRCanvas, useXR} from "@react-three/xr";
 import {Html, Loader, OrbitControls, PerspectiveCamera} from "@react-three/drei";
-import React, {Suspense, useState} from "react";
+import React, {Suspense, useRef, useState} from "react";
 import { Physics } from "@react-three/rapier"
 const initialHelperText = 'Press ESC for Website Focus';
 import { Canvas } from "@react-three/fiber"
@@ -14,6 +14,8 @@ import {NFT} from "./3d/NFT";
 
 export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, setShowNFTModal, picSet}: any) {
   const { player } = useXR();
+
+  const pointerControls = useRef(null);
 
   const [gridOn, setGridOn] = useState(false);
   const [zoomOn, setZoomOn] = useState(false);
@@ -136,10 +138,10 @@ export default function SpaceOne({isMobile, cameraPosition, setShowInfoModal, in
             <Web4></Web4>
             <Cubes />
             {/*<Cube position={[0, 0, 0]} />*/}
-            <Notebook setShowInfoModal={setShowInfoModal} position={[1, 1, -10]} />
-            <NFT setShowNFTModal={setShowNFTModal} position={[12, 0, -11]} />
+            <Notebook pointerControls={pointerControls} setShowInfoModal={setShowInfoModal} position={[1, 1, -10]} />
+            <NFT pointerControls={pointerControls} setShowNFTModal={setShowNFTModal} position={[12, 0, -11]} />
           </Physics>
-          <PointerLockControls />
+          <PointerLockControls ref={pointerControls} />
         </Canvas>
       </KeyboardControls>
     </>

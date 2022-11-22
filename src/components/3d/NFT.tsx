@@ -25,7 +25,7 @@ export const NFTs = (props: any) => {
   )
 }
 
-export function NFT({setShowNFTModal, ...props}: any) {
+export function NFT({pointerControls, setShowNFTModal, ...props}: any) {
   const texture = useLoader(THREE.TextureLoader, imgs.nft);
   const ref = useRef()
   const [hover, set] = useState(null)

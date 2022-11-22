@@ -25,7 +25,7 @@ export const Notebooks = (props: any) => {
   )
 }
 
-export function Notebook({setShowInfoModal, ...props}: any) {
+export function Notebook({pointerControls, setShowInfoModal, ...props}: any) {
   const texture = useLoader(THREE.TextureLoader, imgs.dirt);
   const ref = useRef()
   const [hover, set] = useState(null)
@@ -38,7 +38,30 @@ export function Notebook({setShowInfoModal, ...props}: any) {
   const onOut = useCallback(() => set(null), [])
   const onClick = useCallback((e: any) => {
     e.stopPropagation()
-    setShowInfoModal(true);
+    // console.log(pointerControls)
+    // setShowInfoModal(true);
+    // pointerControls.current.disconnect();
+    // pointerControls.current.disconnect();
+    // pointerControls.current.unlock();
+    // pointerControls.current.unlock();
+    //
+    // window.dispatchEvent(
+    //   new KeyboardEvent("keydown", {
+    //     altKey: false,
+    //     code: "Escape",
+    //     ctrlKey: false,
+    //     isComposing: false,
+    //     key: "Escape",
+    //     location: 0,
+    //     metaKey: false,
+    //     repeat: false,
+    //     shiftKey: false,
+    //     which: 27,
+    //     charCode: 0,
+    //     keyCode: 27,
+    //   })
+    // );
+
   }, [])
   return (
     <RigidBody {...props} type="fixed" colliders="cuboid" ref={ref}>
