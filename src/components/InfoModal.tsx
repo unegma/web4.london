@@ -51,11 +51,13 @@ export default function InfoModal ({ pointerControls, showInfoModal, setShowInfo
         <hr/>
 
         <p><b>Instructions:</b></p>
-        <p>Click to Engage MetaSpace.</p>
-        <p>Move with Keyboard/Mouse/Trackpad to see the Web4 London MetaSpace.</p>
-        <p>Click objects to interact.</p>
-        <p>Explore to find <b>Web4Coin Tokens</b>.</p>
-        <p><b>PRESS ESC</b> to disengage MetaSpace.</p>
+        <ul>
+        {/*<li>Click to Engage MetaSpace.</li>*/}
+        <li>Move with Keyboard/Mouse/Trackpad to explore the MetaSpace.</li>
+        <li>Click objects to interact.</li>
+        <li>Explore to find <b>Web4Coin Tokens</b>.</li>
+        <li><b>PRESS ESC</b> to disengage MetaSpace.</li>
+        </ul>
 
 
         <hr/>
