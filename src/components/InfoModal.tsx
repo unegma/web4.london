@@ -7,6 +7,8 @@ export default function InfoModal ({ pointerControls, showInfoModal, setShowInfo
 
   const handleClose = () => {
     setShowInfoModal(false);
+    pointerControls.current.connect()
+    setTimeout(() => {pointerControls.current.lock()},110) // this needs to be higher than the timeout on the modal
   };
 
   const modalStyle = {
