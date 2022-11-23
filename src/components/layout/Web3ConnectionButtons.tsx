@@ -61,8 +61,10 @@ export default function Web3ConnectionButtons({pointerControls, setAddress, setS
     //   (connector as any).close(); // todo unfinsihed
     //   deactivate();
     // } else {
-      deactivate();
+    deactivate();
     setTimeout(() => {pointerControls.current.unlock()},100);
+    pointerControls.current.connect()
+    setTimeout(() => {pointerControls.current.lock()},110) // this needs to be higher than the timeout on the modal
     // }
   }
 
