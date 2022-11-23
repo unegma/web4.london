@@ -6,6 +6,8 @@ export default function CoinModal ({ pointerControls, reserveBalance, reserveSym
 
   const handleClose = () => {
     setShowNFTModal(false);
+    pointerControls.current.connect()
+    setTimeout(() => {pointerControls.current.lock()},110) // this needs to be higher than the timeout on the modal
   };
 
   const modalStyle = {
