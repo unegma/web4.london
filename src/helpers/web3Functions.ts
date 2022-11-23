@@ -1,7 +1,7 @@
 import {ethers} from "ethers";
 import * as rainSDK from "rain-sdk";
 
-const WARNING_MESSAGE="Are you connected with your Web3 Wallet? (Click the button at the top right)!\n\nYou also need to be connected to Ethereum Mainnet (how to: https://www.youtube.com/watch?v=6h_liI6atEk)!\n\nYou will also need ETH to pay transaction fees to claim these tokens (if fees are high, try at a different time).";
+const WARNING_MESSAGE="Are you connected with your Web3 Wallet? (Click the button at the top right)!\n\nYou also need to be connected to Polygon (how to: https://www.youtube.com/watch?v=6h_liI6atEk)!\n\nYou will also need MATIC to pay transaction fees to claim these tokens.";
 
 /**
  * Called within the modal for making a buy
