@@ -21,7 +21,7 @@ export default function NavBar(
           </Typography>
           {/*<Button style={{marginRight: '5px', color: 'black'}} color="inherit" variant="contained" onClick={() => {picSet === 1 ? setPicSet(2) : setPicSet(1)}}><InsertPhoto/> Set: {picSet}</Button>*/}
           <Button color="inherit" variant="outlined" href={`${process.env.REACT_APP_ARTICLE_LINK}`} target="_blank"><Description/>&nbsp;Why Web4</Button>
-          <Web3ConnectionButtons className='connect-button' pointerControls={pointerControls} onClick={() => setTimeout(() => {pointerControls.current.unlock()},100)} />
+          <Web3ConnectionButtons className='connect-button' pointerControls={pointerControls} />
 
         </Toolbar>
       </AppBar>

@@ -62,6 +62,7 @@ export default function Web3ConnectionButtons({pointerControls, setAddress, setS
     //   deactivate();
     // } else {
       deactivate();
+    setTimeout(() => {pointerControls.current.unlock()},100);
     // }
   }
 
@@ -70,6 +71,7 @@ export default function Web3ConnectionButtons({pointerControls, setAddress, setS
 
   const showModal = () => {
     setModalOpen(true);
+    setTimeout(() => {pointerControls.current.unlock()},100);
   }
 
   const hideModal = () => {
@@ -90,7 +92,7 @@ export default function Web3ConnectionButtons({pointerControls, setAddress, setS
           {(!active && !error) && (
             <>
               <h2 className="modalTitle">Choose Connection Type<br/><br/></h2>
-              <img src={`https://assets.unegma.net/shared/various/polygon-logo.png`} />
+              <img style={{width:"20%"}} src={`https://assets.unegma.net/shared/various/polygon-logo.png`} />
             </>
           )}
 
@@ -129,9 +131,10 @@ export default function Web3ConnectionButtons({pointerControls, setAddress, setS
                   (!active && !error) && (
 
                     <Button
-                      variant="outlined"
+                      variant="contained"
                       color="primary"
                       className="connectTypeButton"
+                      style={{marginRight:"5px"}}
                       disabled={disabled}
                       key={name}
                       onClick={() => {
