@@ -88,7 +88,10 @@ export default function Web3ConnectionButtons({pointerControls, setAddress, setS
           <HighlightOffIcon className="closeModalButton" onClick={() => { hideModal()}}/>
 
           {(!active && !error) && (
-            <h2 className="modalTitle">Choose Connection Type<br/><br/></h2>
+            <>
+              <h2 className="modalTitle">Choose Connection Type<br/><br/></h2>
+              <img src={`https://assets.unegma.net/shared/various/polygon-logo.png`} />
+            </>
           )}
 
           {(active || error) && (
