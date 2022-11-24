@@ -10,6 +10,7 @@ import { Cube, Cubes } from "./3d/Cube"
 import {Web4} from "./3d/Web4";
 import {Notebook} from "./3d/NoteBook";
 import {NFT} from "./3d/NFT";
+import Globe from "./3d/Globe";
 const initialHelperText = 'PRESS ESC to disengage MetaSpace';
 
 export default function SpaceOne({pointerControls, isMobile, cameraPosition, setShowInfoModal, infoModalText, setInfoModalText, setShowNFTModal, picSet}: any) {
@@ -121,6 +122,8 @@ export default function SpaceOne({pointerControls, isMobile, cameraPosition, set
           <Physics gravity={[0, -30, 0]}>
 
             <Suspense>
+              <Globe name="The Moon" position={[-200, 200, -900]}
+                     size={[30, 24, 24]} color="white"/>
               <Ground />
               <Player />
             </Suspense>
