@@ -75,7 +75,7 @@ export default function CoinModal ({ showModal, pointerControls, reserveBalance,
           <span className='yourBalance'>Your Balance: <b>{reserveBalance} {reserveSymbol}</b></span>.<br/>
           <span>To see these tokens in your Wallet,&nbsp;
           <a href="#" onClick={(event: any) =>
-          {event.preventDefault();alert(`Copy: ${tokenAddress} to clipboard and import token in to your Wallet.`)}}
+          {event.preventDefault();alert(`Copy: ${tokenAddress} to clipboard and import token into your Wallet. See here for how to: https://www.youtube.com/results?search_query=how+to+add+custom+token+in+metamask`)}}
           >
             add the address for <b>{reserveSymbol}</b>
           </a>.</span>
