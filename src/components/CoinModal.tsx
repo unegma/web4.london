@@ -73,28 +73,24 @@ export default function CoinModal ({ showModal, pointerControls, reserveBalance,
         <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
         <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
         {/*<p>Claim using your <a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Metamask/Web3 Wallet</a>.</p>*/}
-        <p>Claim using your <b>Metamask/Web3</b> Wallet:</p>
+        <p><b>Claim your Web4Coin:</b></p>
         <ol>
-          <li>Connect using the <b>Connect</b> Button in the top right.</li>
+          { !active && (
+            <li>Connect using the <b>Connect</b> Button in the top right.</li>
+          )}
           <li>Click the <b>Get</b> Button below.</li>
         </ol>
         {/*<p>You will need to be connected to <a target="_blank" href="https://chainlist.org/chain/137"><b>Polygon</b>.</a></p>*/}
         <hr/>
 
         <Typography className="modalText">
-          <span className='yourBalance'>Your Balance: <b>{reserveBalance} {reserveSymbol}</b></span>.<br/>
-          <span>To see these tokens in your Wallet,&nbsp;
-          <a href="#" onClick={(event: any) =>
-          {event.preventDefault();alert(`Copy: ${tokenAddress} to clipboard and import token into your Wallet. See here for how to: https://www.youtube.com/results?search_query=how+to+add+custom+token+in+metamask`)}}
-          >
-            add the address for <b>{reserveSymbol}</b>
-          </a>.</span>
+          <span>To see these tokens in your Wallet, <a target="_blank" href="https://www.youtube.com/results?search_query=how+to+add+custom+token+in+metamask">add the address for <b>{reserveSymbol}</b></a>:<br/><b>{process.env.REACT_APP_WEB4COIN_ADDRESS}</b></span>
         </Typography>
 
         <hr/>
 
         <br/>
-
+        <span className='yourBalance'>Your Balance: <b>{reserveBalance} {reserveSymbol}</b></span>.<br/><br/>
         <Button disabled={buttonLock} className="fifty-percent-button" variant="contained" color="success" onClick={initiateClaim}>Get 100 Web4Coin!</Button>
         {/*<Typography className="secondaryColor">*/}
         {/*  Contribute here: <a target="_blank" href={process.env.REACT_APP_GITHUB_LINK}>Github</a>.<br/>*/}

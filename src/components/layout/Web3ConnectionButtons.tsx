@@ -167,7 +167,7 @@ export default function Web3ConnectionButtons({showNFTModal, setModalOpen, showM
               // <Button variant="contained" color="primary" onClick={hideModal} component={Link} to="/wallet">
               //   Go To My Wallet
               // </Button>
-              <Typography className="black">Connected to: <span className="minitext">{account}</span></Typography>
+              <Typography className="black">Connected to Wallet:<br/><span className="minitext"><b>{account}</b></span></Typography>
             )}
             <br/>
 
