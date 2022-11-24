@@ -1,8 +1,13 @@
 import {Button, createStyles, makeStyles, Modal, Theme, Typography, Box} from "@mui/material";
 import React from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import Web3ConnectionButtons from "./layout/Web3ConnectionButtons";
+import {useWeb3React} from "@web3-react/core";
+import {Web3Provider} from "@ethersproject/providers";
 
-export default function CoinModal ({ pointerControls, reserveBalance, reserveSymbol, tokenAddress, initiateClaim, buttonLock, setButtonLock, showNFTModal, setShowNFTModal, infoModalText }: any) {
+export default function CoinModal ({ showModal, pointerControls, reserveBalance, reserveSymbol, tokenAddress, initiateClaim, buttonLock, setButtonLock, showNFTModal, setShowNFTModal, infoModalText }: any) {
+  const context = useWeb3React<Web3Provider>(); // todo check because this web3provider is from ethers
+  const { connector, library, chainId, account, activate, deactivate, active, error } = context;
 
   const handleClose = () => {
     setShowNFTModal(false);
@@ -43,6 +48,18 @@ export default function CoinModal ({ pointerControls, reserveBalance, reserveSym
 
         {/*<img src="https://picsum.photos/seed/picsum/200/300"/>*/}
 
+
+        {(!active && !error) && (
+          <>
+            {/*<div className="donateButton-container">*/}
+            {/*  <BuyButton />*/}
+            {/*</div>*/}
+            <Button variant="contained" color="warning" className={`connectButton web3connectButton connect-button-modal`} onClick={showModal}>
+              Connect
+            </Button>
+          </>
+        )}
+
         {/*<p>{infoModalText}</p>*/}
         <p style={{color: 'red'}}>YOU FOUND WEB4TOKENS!</p>
         <p>Claim using your <a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Metamask/Web3 Wallet</a>.</p>
@@ -51,12 +68,12 @@ export default function CoinModal ({ pointerControls, reserveBalance, reserveSym
 
         <Typography className="modalText">
           <span className='yourBalance'>Your Balance: <b>{reserveBalance} {reserveSymbol}</b></span>.<br/>
-          <p>To see these tokens in your Wallet,&nbsp;
+          <span>To see these tokens in your Wallet,&nbsp;
           <a href="#" onClick={(event: any) =>
           {event.preventDefault();alert(`Copy: ${tokenAddress} to clipboard and import token in to your Wallet.`)}}
           >
             add the address for <b>{reserveSymbol}</b>
-          </a>.</p>
+          </a>.</span>
         </Typography>
 
         <hr/>

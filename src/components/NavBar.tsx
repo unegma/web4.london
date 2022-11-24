@@ -8,7 +8,7 @@ import {Book, BookOutlined, Description, InsertPhoto, LibraryBooks, Menu, Note, 
 import Web3ConnectionButtons from "./layout/Web3ConnectionButtons";
 
 export default function NavBar(
-  {pointerControls, toggleLeftSideDrawer, setShowBookingModal, showBookingModal, picSet, setPicSet}: any) {
+  {setModalOpen, showModal, modalOpen, pointerControls, toggleLeftSideDrawer, setShowBookingModal, showBookingModal, picSet, setPicSet, showNFTModal}: any) {
   return (
     <Box component="div" sx={{ flexGrow: 1 }} className="navBar" >
       <AppBar position="fixed" color="transparent">
@@ -21,7 +21,7 @@ export default function NavBar(
           </Typography>
           {/*<Button style={{marginRight: '5px', color: 'black'}} color="inherit" variant="contained" onClick={() => {picSet === 1 ? setPicSet(2) : setPicSet(1)}}><InsertPhoto/> Set: {picSet}</Button>*/}
           <Button color="inherit" variant="outlined" href={`${process.env.REACT_APP_ARTICLE_LINK}`} target="_blank"><Description/>&nbsp;Why Web4</Button>
-          <Web3ConnectionButtons className='connect-button' pointerControls={pointerControls} />
+          <Web3ConnectionButtons showNFTModal={showNFTModal} setModalOpen={setModalOpen} showModal={showModal} modalOpen={modalOpen} className='connect-button' pointerControls={pointerControls} />
 
         </Toolbar>
       </AppBar>

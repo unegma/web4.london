@@ -91,14 +91,24 @@ function App() {
       setDrawerOpen(!drawerOpen);
   };
 
+  // web3 modal (moved)
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const showModal = () => {
+    setModalOpen(true);
+    setTimeout(() => { // @ts-ignore
+      pointerControls.current.unlock()},100);
+  }
+
   return (
     <div className="App">
       {/*<CssBaseline /> todo add this? */}
 
-      <NavBar pointerControls={pointerControls} picSet={picSet} setPicSet={setPicSet} toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
+      <NavBar showNFTModal={showNFTModal} setModalOpen={setModalOpen} showModal={showModal} modalOpen={modalOpen} pointerControls={pointerControls} picSet={picSet} setPicSet={setPicSet} toggleLeftSideDrawer={toggleLeftSideDrawer} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
 
       <InfoModal pointerControls={pointerControls} showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} infoModalText={infoModalText} />
       <CoinModal
+        showModal={showModal}
         pointerControls={pointerControls}
         initiateClaim={() => initiateClaim(
           signer, setButtonLock,setLoading,account,setConsoleData,setConsoleColor, tokenAddress, setClaimComplete

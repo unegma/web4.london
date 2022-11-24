@@ -38,13 +38,12 @@ const connectorsByName: { [connectorName in ConnectorNames]: any} = {
   [ConnectorNames.WalletConnect]: walletconnect
 }
 
-export default function Web3ConnectionButtons({pointerControls, setAddress, setSettingsOpen}: any) {
+export default function Web3ConnectionButtons({showNFTModal, setModalOpen, showModal, modalOpen = false, pointerControls, setAddress, setSettingsOpen}: any) {
   const context = useWeb3React<Web3Provider>(); // todo check because this web3provider is from ethers
   const { connector, library, chainId, account, activate, deactivate, active, error } = context;
 
   // handle logic to recognize the connector currently being activated
   const [activatingConnector, setActivatingConnector] = useState<any>();
-  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     if (activatingConnector && activatingConnector === connector) {
@@ -71,15 +70,16 @@ export default function Web3ConnectionButtons({pointerControls, setAddress, setS
   // handle logic to connect in reaction to certain events on the injected ethereum provider, if it exists
   useInactiveListener(!triedEager || !!activatingConnector);
 
-  const showModal = () => {
-    setModalOpen(true);
-    setTimeout(() => {pointerControls.current.unlock()},100);
-  }
-
   const hideModal = () => {
     setModalOpen(false);
-    pointerControls.current.connect()
-    setTimeout(() => {pointerControls.current.lock()},110) // this needs to be higher than the timeout on the modal
+
+    // don't re-engage lock on nft modal
+    if(!showNFTModal) {
+      pointerControls.current.connect()
+      setTimeout(() => {
+        pointerControls.current.lock()
+      }, 110) // this needs to be higher than the timeout on the modal
+    }
   };
 
   return (
