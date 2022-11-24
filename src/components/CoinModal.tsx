@@ -61,17 +61,18 @@ export default function CoinModal ({ showModal, pointerControls, reserveBalance,
         )}
 
         {/*<p>{infoModalText}</p>*/}
+
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
         <p style={{color: 'red'}}><b>YOU FOUND WEB4COIN! YEY!</b></p>
-        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
-        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
-        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
-        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
-        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
-        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
-        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
-        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
-        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
-        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
         {/*<p>Claim using your <a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Metamask/Web3 Wallet</a>.</p>*/}
         <p><b>Claim your Web4Coin:</b></p>
         <ol>

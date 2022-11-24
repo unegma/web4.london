@@ -1,7 +1,7 @@
 import {ethers} from "ethers";
 import * as rainSDK from "rain-sdk";
 
-const WARNING_MESSAGE="Are you connected with your Web3 Wallet? (Click the Connect button at the top right)!";
+const WARNING_MESSAGE="Are you connected with your Web3 Wallet?\n(Click the Connect button at the top right)!";
 
 /**
  * Called within the modal for making a buy
