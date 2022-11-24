@@ -62,8 +62,13 @@ export default function CoinModal ({ showModal, pointerControls, reserveBalance,
 
         {/*<p>{infoModalText}</p>*/}
         <p style={{color: 'red'}}>YOU FOUND WEB4TOKENS!</p>
-        <p>Claim using your <a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Metamask/Web3 Wallet</a>.</p>
-        <p>You will need to be connected to <a target="_blank" href="https://chainlist.org/chain/137"><b>Polygon</b>.</a></p>
+        {/*<p>Claim using your <a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Metamask/Web3 Wallet</a>.</p>*/}
+        <p>Claim using your Metamask/Web3 Wallet:</p>
+        <ol>
+          <li>Connect using the connect button in the top right.</li>
+          <li>Click the Claim button in the bottom left.</li>
+        </ol>
+        {/*<p>You will need to be connected to <a target="_blank" href="https://chainlist.org/chain/137"><b>Polygon</b>.</a></p>*/}
         <hr/>
 
         <Typography className="modalText">

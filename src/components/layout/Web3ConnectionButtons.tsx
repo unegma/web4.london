@@ -171,18 +171,25 @@ export default function Web3ConnectionButtons({showNFTModal, setModalOpen, showM
             )}
             <br/>
 
-            {!active &&
-              <Typography className="black"><b>(You may need to refresh the page when changing chains or
-                wallets.)</b></Typography>
-            }
             {/*<br/>*/}
             {/*<Button variant="contained" color="primary" onClick={()=>{window.location.reload();}}>Refresh Page</Button>*/}
             {/*<br/>*/}
             { !active &&
-              <div className="youtube-link-container">
+              <>
                 <br/>
-                <a target="_blank" href="https://www.youtube.com/watch?v=6h_liI6atEk">Learn how to set up a MetaMask wallet.</a>
-              </div>
+                <br/>
+                <p><b>Info:</b></p>
+                <ul>
+                  <li><p>You will need to be connected to the <a target="_blank" href="https://chainlist.org/chain/137"><b>Polygon Network</b>.</a></p></li>
+                  <li><p>You will need MATIC tokens for transaction fees.</p></li>
+                  <li><p><a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Learn how to set up a MetaMask wallet.</a></p></li>
+                  <li><p><b>(You may need to refresh the page when changing chains or wallets.)</b></p></li>
+                </ul>
+
+                <br/>
+                <br/>
+                <p>Minting created using <a href="https://rainprotocol.xyz" target="_blank">Rain Protocol.</a></p>
+              </>
             }
           </div>
           <br/>

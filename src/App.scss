@@ -209,3 +209,21 @@ canvas {
 .connect-button-modal {
   float: right !important;
 }
+
+.infoModal__mobile-content {
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.infoModal__mobile-warning {
+  color: red;
+  font-size: 2em;
+}
+
+.infoModal__desktop-content {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}

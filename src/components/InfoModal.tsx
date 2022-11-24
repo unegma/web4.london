@@ -38,29 +38,35 @@ export default function InfoModal ({ pointerControls, showInfoModal, setShowInfo
       // aria-labelledby="simple-modal-title"
       // aria-describedby="simple-modal-description"
     >
-      <Box component="div" sx={modalStyle}>
-        {/*<HighlightOffIcon className="closeModalButton" onClick={() => { setShowInfoModal(false)}}/>*/}
-        {/*<Typography variant="h3" className="secondaryColor">Info</Typography>*/}
+      <Box className="infoModal" component="div" sx={modalStyle}>
 
-        {/*<img src="https://picsum.photos/seed/picsum/200/300"/>*/}
+        <div className="infoModal__mobile-content">
+          <p className='infoModal__mobile-warning'><b>CURRENTLY DESKTOP ONLY</b></p>
+          <p>You can still follow these links:</p>
+        </div>
 
-        {/*<p>{infoModalText}</p>*/}
-        {/*<p style={{color: 'red'}}>PLEASE NOTE: THIS IS A DEMO, THESE ARE NOT ACTUAL NFTS AND NO PAINTINGS ARE FOR SALE.</p>*/}
-        <p className='red'>CURRENTLY DESKTOP ONLY, not mobile optimised.</p>
+        <div className="infoModal__desktop-content">
+          {/*<HighlightOffIcon className="closeModalButton" onClick={() => { setShowInfoModal(false)}}/>*/}
+          {/*<Typography variant="h3" className="secondaryColor">Info</Typography>*/}
 
-        <hr/>
+          {/*<img src="https://picsum.photos/seed/picsum/200/300"/>*/}
 
-        <p><b>Instructions:</b></p>
-        <ul>
-        {/*<li>Click to Engage MetaSpace.</li>*/}
-        <li>Move with Keyboard/Mouse/Trackpad to explore the MetaSpace.</li>
-        <li>Click objects to interact.</li>
-        <li>Explore to find <b>Web4Coin Tokens</b>.</li>
-        <li><b>PRESS ESC</b> to disengage MetaSpace.</li>
-        </ul>
+          {/*<p>{infoModalText}</p>*/}
+          {/*<p style={{color: 'red'}}>PLEASE NOTE: THIS IS A DEMO, THESE ARE NOT ACTUAL NFTS AND NO PAINTINGS ARE FOR SALE.</p>*/}
 
 
-        <hr/>
+          <p><b>Instructions:</b></p>
+          <ol>
+          {/*<li>Click to Engage MetaSpace.</li>*/}
+          <li>Move with Keyboard/Mouse/Trackpad to explore the MetaSpace.</li>
+          <li>Click objects to interact.</li>
+          <li>Explore to find <b>Web4Coin Tokens</b>.</li>
+          <li><b>PRESS ESC</b> to disengage MetaSpace.</li>
+          </ol>
+
+          <hr/>
+
+        </div>
 
         <p><a target="_blank" href={`${process.env.REACT_APP_ARTICLE_LINK}`}><Description/>&nbsp;Read about Web4 and why it is Important here.</a></p>
         <p><a target="_blank" href={`${process.env.REACT_APP_MEETUP_LINK}`}><People/>Join Web4 Communities in London.</a></p>
