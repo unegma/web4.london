@@ -180,10 +180,10 @@ export default function Web3ConnectionButtons({showNFTModal, setModalOpen, showM
                 <br/>
                 <p><b>Info:</b></p>
                 <ul>
+                  <li><p>Connect with, or <a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>learn how to set up a Web3 wallet.</a></p></li>
                   <li><p>You will need to be connected to the <a target="_blank" href="https://chainlist.org/chain/137"><b>Polygon Network</b>.</a></p></li>
+                  <li><p><a href="https://www.youtube.com/results?search_query=how+to+connect+to+polygon+network+on+metamask" target="_blank">Learn how to connect to Polygon</a>.</p></li>
                   <li><p>You will need MATIC tokens for transaction fees.</p></li>
-                  <li><p><a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Learn how to set up a MetaMask wallet.</a></p></li>
-                  <li><p>Learn how to connect to <a href="https://www.youtube.com/results?search_query=how+to+connect+to+polygon+network+on+metamask" target="_blank">Polygon</a>.</p></li>
                   <li><p><b>(You may need to refresh the page when changing chains or wallets.)</b></p></li>
                 </ul>
 
