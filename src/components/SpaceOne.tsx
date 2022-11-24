@@ -127,8 +127,8 @@ export default function SpaceOne({pointerControls, isMobile, cameraPosition, set
             <Web4></Web4>
             <Cubes />
             {/*<Cube position={[0, 0, 0]} />*/}
-            <Notebook pointerControls={pointerControls} setShowInfoModal={setShowInfoModal} position={[1, 1, -10]} />
-            <NFT pointerControls={pointerControls} setShowNFTModal={setShowNFTModal} position={[12, 0, -11]} />
+            <Notebook pointerControls={pointerControls} setShowInfoModal={setShowInfoModal} position={[1, 1, -20]} />
+            <NFT pointerControls={pointerControls} setShowNFTModal={setShowNFTModal} position={[12, 0, -21]} />
           </Physics>
           <PointerLockControls ref={pointerControls} />
         </Canvas>
