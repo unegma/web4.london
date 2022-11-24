@@ -58,10 +58,10 @@ export default function InfoModal ({ pointerControls, showInfoModal, setShowInfo
           <p><b>Instructions:</b></p>
           <ol>
           {/*<li>Click to Engage MetaSpace.</li>*/}
-          <li>Move with Keyboard/Mouse/Trackpad to explore the MetaSpace.</li>
-          <li>Click objects to interact.</li>
-          <li>Explore to find <b>Web4Coin Tokens</b>.</li>
-          <li><b>PRESS ESC</b> to disengage MetaSpace.</li>
+            <li><p>Move with <b>Keyboard/Mouse/Trackpad</b> to explore the MetaSpace.</p></li>
+            <li><p>Aim at, and then <b>Click</b> objects to interact.</p></li>
+            <li><p>Explore to find <b>Web4Coin</b> Tokens (Web3 Digital Objects).</p></li>
+            <li><p><b>PRESS ESC</b> to disengage MetaSpace.</p></li>
           </ol>
 
           <hr/>

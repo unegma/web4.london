@@ -61,12 +61,22 @@ export default function CoinModal ({ showModal, pointerControls, reserveBalance,
         )}
 
         {/*<p>{infoModalText}</p>*/}
-        <p style={{color: 'red'}}>YOU FOUND WEB4TOKENS!</p>
+        <p style={{color: 'red'}}><b>YOU FOUND WEB4COIN! YEY!</b></p>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
+        <img src="./android-chrome-384x384.png" style={{width: "5%", marginRight: "5px"}}/>
         {/*<p>Claim using your <a target="_blank" href={`${process.env.REACT_APP_METAMASK_VIDEO_LINK}`}>Metamask/Web3 Wallet</a>.</p>*/}
-        <p>Claim using your Metamask/Web3 Wallet:</p>
+        <p>Claim using your <b>Metamask/Web3</b> Wallet:</p>
         <ol>
-          <li>Connect using the connect button in the top right.</li>
-          <li>Click the Claim button in the bottom left.</li>
+          <li>Connect using the <b>Connect</b> Button in the top right.</li>
+          <li>Click the <b>Get</b> Button below.</li>
         </ol>
         {/*<p>You will need to be connected to <a target="_blank" href="https://chainlist.org/chain/137"><b>Polygon</b>.</a></p>*/}
         <hr/>
