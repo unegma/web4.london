@@ -1,7 +1,7 @@
 import {Button, createStyles, makeStyles, Modal, Theme, Typography, Box} from "@mui/material";
 import React from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import {Description, People, Telegram} from "@mui/icons-material";
+import {Create, Description, People, Telegram} from "@mui/icons-material";
 
 export default function InfoModal ({ pointerControls, showInfoModal, setShowInfoModal, infoModalText }: any) {
 
@@ -71,6 +71,7 @@ export default function InfoModal ({ pointerControls, showInfoModal, setShowInfo
         <p><a target="_blank" href={`${process.env.REACT_APP_ARTICLE_LINK}`}><Description/>&nbsp;Read about Web4 and why it is Important here.</a></p>
         <p><a target="_blank" href={`${process.env.REACT_APP_MEETUP_LINK}`}><People/>Join Web4 Communities in London.</a></p>
         <p><a target="_blank" href={`${process.env.REACT_APP_TELEGRAM_LINK}`}><Telegram/>Join Web4 Communities on Telegram.</a></p>
+        <p><a target="_blank" href={`${process.env.REACT_APP_SPREADSHEET_LINK}`}><Create/>Contribute to Keywords.</a></p>
 
         {/*<Typography className="secondaryColor">*/}
         {/*  Contribute here: <a target="_blank" href={process.env.REACT_APP_GITHUB_LINK}>Github</a>.<br/>*/}
