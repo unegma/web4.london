@@ -153,20 +153,20 @@ function App() {
         />
       </Routes>
 
-      <div className="buttons-container">
-      {/*  <InfoOutlined className="pointer" style={{ color: "white", margin: "0 4px" }} onClick={() => {setShowInfoModal(!showInfoModal)}}/>*/}
+      {/*<div className="buttons-container">*/}
+      {/*/!*  <InfoOutlined className="pointer" style={{ color: "white", margin: "0 4px" }} onClick={() => {setShowInfoModal(!showInfoModal)}}/>*!/*/}
 
-      {/*  <div className="pointer" onClick={() => {setShowImages(!showImages)}}>*/}
-      {/*    <CameraAltOutlined  style={{ color: "white", margin: "0 4px" }} />*/}
-      {/*    { showImages && (*/}
-      {/*      <ChevronRight style={{ color: "white", margin: "0 4px" }} />*/}
-      {/*    )}*/}
-      {/*    { !showImages && (*/}
-      {/*      <ChevronLeft style={{ color: "white", margin: "0 4px" }} />*/}
-      {/*    )}*/}
-      {/*    </div>*/}
-        <a target="_blank" style={{color: 'white', textDecoration:'none'}} href="https://unegma.com">unegma<span style={{color:'cyan'}}>.</span>com</a>
-      </div>
+      {/*/!*  <div className="pointer" onClick={() => {setShowImages(!showImages)}}>*!/*/}
+      {/*/!*    <CameraAltOutlined  style={{ color: "white", margin: "0 4px" }} />*!/*/}
+      {/*/!*    { showImages && (*!/*/}
+      {/*/!*      <ChevronRight style={{ color: "white", margin: "0 4px" }} />*!/*/}
+      {/*/!*    )}*!/*/}
+      {/*/!*    { !showImages && (*!/*/}
+      {/*/!*      <ChevronLeft style={{ color: "white", margin: "0 4px" }} />*!/*/}
+      {/*/!*    )}*!/*/}
+      {/*/!*    </div>*!/*/}
+      {/*  <a target="_blank" style={{color: 'white', textDecoration:'none'}} href="https://unegma.com">unegma<span style={{color:'cyan'}}>.</span>com</a>*/}
+      {/*</div>*/}
     </div>
   );
 }
